@@ -1,0 +1,153 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+.pic {
+  width: 50%;
+  height: 100%;
+}
+.login-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  width: 99%;
+  height: 5%;
+  display: flex;
+  justify-content: end;
+}
+.logo-img {
+  height: 100%;
+}
+.google-login {
+  width: 99%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  /* background-color: aqua; */
+}
+.google-cont a {
+  color: #2369f2;
+  cursor: pointer;
+}
+.google-cont a:hover {
+  color: #03215c;
+}
+.google-icon {
+  min-width: 23%;
+  max-width: max-content;
+  height: 4vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #877e7e;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.google-icon:hover {
+  background-color: #03215c;
+  color: white;
+}
+.g-icon {
+  height: 2.5vh;
+}
+.icon-text {
+  font-weight: 600;
+}
+.google-or {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  column-gap: 0.5vw;
+}
+.google-or::before,
+.google-or::after {
+  content: "";
+  background-color: #877e7e;
+  display: block;
+  height: 1px;
+}
+.form-div{
+    width: 99%;
+    height: 40%;
+}
+.form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.form label{
+    font-weight: 600;
+    font-size: 20px;
+}
+.email-div,.password-div,.submit-btn{
+    width: 70%;   
+}
+.sign-in-btn{
+    width: 100%;
+    height: 5vh;
+    border-radius: 20px;
+    border: none;
+    background-color: #2369f2;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 20px;
+}
+.sign-in-btn:hover{
+    background-color: #03215c;
+}
+.email,.password{
+    width: 98%;
+    height: 5vh;
+    border-radius: 20px;
+    border: none;
+    padding-left: 2%;
+    background-color: #DEE8FB;
+}
+.forgot-div{
+    display: flex;
+    justify-content: end;
+}
+.forgot-div>p{
+    color: #2369f2;
+    cursor: pointer;
+}
+.forgot-div>p:hover{
+    color: #03215c;
+}
+
+@media (max-width:768px) {
+    .pic{
+        display: none;
+    }
+    .content{
+        width: 100%;
+    }
+    .google-icon{
+        padding-left: 1%;
+        padding-right: 1%;
+        column-gap: 1vw;
+    }
+}
+@media (max-width:425px) {
+    .email-div,.password-div,.submit-btn{
+        width: 90%;   
+    }
+}
