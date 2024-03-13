@@ -1,0 +1,82 @@
+.main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+.logo-pic{
+    height: 50%;
+}
+.content{
+    min-height: 60%;
+    max-height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cont-title{
+    color: #03215c;
+}
+.cont-boxes{
+    min-height: 50%;
+    max-height: max-content;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 1vh;
+}
+.client-box,.freelance-box{
+    height: 100%;
+    width: 45%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 32px;
+    padding-left: 1%;
+    border: 1px solid #877e7e;
+    cursor: pointer;
+}
+.client-box:hover,.freelance-box:hover{
+    color: #2369f2;
+    box-shadow: 4px 4px 2px gray;
+    height: 105%;
+    width: 48%;
+}
+.cont-account{
+    margin-top: 3%;
+    font-size: 22px;
+    font-weight: 500;
+}
+.cont-account a{
+    text-decoration: none;
+    color: #2369f2;
+    cursor: pointer;
+}
+.cont-account a:hover{
+    color: #03215c;
+}
+
+@media (max-width:768px) {
+    .cont-boxes{
+        width: 90%;
+    }
+}
+@media (max-width:425px) {
+    .client-box,.freelance-box{
+        width: 100%;
+        height: 45%;
+        font-size: 22px;
+    }
+    .logo{
+        justify-content: center;
+    }
+}

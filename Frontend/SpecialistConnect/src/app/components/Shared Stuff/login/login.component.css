@@ -41,6 +41,7 @@
 .google-cont a {
   color: #2369f2;
   cursor: pointer;
+  text-decoration: none;
 }
 .google-cont a:hover {
   color: #03215c;
