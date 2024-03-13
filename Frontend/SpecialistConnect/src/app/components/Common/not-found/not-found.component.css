@@ -1,0 +1,40 @@
+.main{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.not-found-pic{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* object-fit: cover; */
+}
+.content{
+    position: relative; 
+}
+.back-home-btn{
+    height: 5vh;
+    width: 10vw;
+    margin-top: 2vh;
+    border: none;
+    color: white;
+    background-color:#2369f2;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.back-home-btn:hover{
+    background-color: #03215c;
+}
+
+@media (max-width:768px) {
+    .back-home-btn{
+        width: 20vw;
+    }
+}
+@media (max-width:425px) {
+    .back-home-btn{
+        width: 40vw;
+    }
+}
