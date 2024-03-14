@@ -8,6 +8,7 @@ import { RegisterAsComponent } from './components/Shared Stuff/register-as/regis
 import { UserComponent } from './components/User/user/user.component';
 import { AdminComponent } from './components/Admin/admin/admin.component';
 import { SpecComponent } from './components/Specialist/spec/spec.component';
+import { UserSettingsComponent } from './components/User/user-settings/user-settings.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -16,7 +17,11 @@ export const routes: Routes = [
   { path: 'register-spec', component: SpecRegisterComponent },
   { path: 'register-user', component: UserRegisterComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'user', component: UserComponent },
+  { path: 'user', component: UserComponent,
+  children:[
+    {path: 'settings', component: UserSettingsComponent},
+  ]
+},
   { path: 'spec', component: SpecComponent },
   { path: '**', component: NotFoundComponent },
 ];
