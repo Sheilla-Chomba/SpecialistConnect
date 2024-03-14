@@ -5,6 +5,8 @@ import { UserRegisterComponent } from './components/User/user-register/user-regi
 import { NotFoundComponent } from './components/Shared Stuff/not-found/not-found.component';
 import { LandingComponent } from './components/Shared Stuff/landing/landing.component';
 import { RegisterAsComponent } from './components/Shared Stuff/register-as/register-as.component';
+import { UserComponent } from './components/User/user/user.component';
+import { AdminComponent } from './components/Admin/admin/admin.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -12,5 +14,7 @@ export const routes: Routes = [
   { path: 'register-as', component:RegisterAsComponent},
   { path: 'register-spec', component: SpecRegisterComponent },
   { path: 'register-user', component: UserRegisterComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'user', component: UserComponent },
   { path: '**', component: NotFoundComponent },
 ];
