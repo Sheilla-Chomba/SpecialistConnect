@@ -10,6 +10,7 @@ import { AdminComponent } from './components/Admin/admin/admin.component';
 import { SpecComponent } from './components/Specialist/spec/spec.component';
 import { UserSettingsComponent } from './components/User/user-settings/user-settings.component';
 import { AdminSettingsComponent } from './components/Admin/admin-settings/admin-settings.component';
+import { AdminViewUsersComponent } from './components/Admin/admin-view-users/admin-view-users.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'admin', component: AdminComponent,
   children:[
     {path: 'settings', component: AdminSettingsComponent},
+    {path: 'view-users', component: AdminViewUsersComponent},
   ]
 },
   { path: 'user', component: UserComponent,
