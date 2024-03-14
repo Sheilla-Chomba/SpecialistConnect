@@ -7,14 +7,16 @@ import { LandingComponent } from './components/Shared Stuff/landing/landing.comp
 import { RegisterAsComponent } from './components/Shared Stuff/register-as/register-as.component';
 import { UserComponent } from './components/User/user/user.component';
 import { AdminComponent } from './components/Admin/admin/admin.component';
+import { SpecComponent } from './components/Specialist/spec/spec.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register-as', component:RegisterAsComponent},
+  { path: 'register-as', component: RegisterAsComponent },
   { path: 'register-spec', component: SpecRegisterComponent },
   { path: 'register-user', component: UserRegisterComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'user', component: UserComponent },
+  { path: 'spec', component: SpecComponent },
   { path: '**', component: NotFoundComponent },
 ];
