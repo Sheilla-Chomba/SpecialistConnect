@@ -1,0 +1,71 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  max-height: max-content;
+  display: flex;
+  flex-direction: column;
+}
+.photo-sect {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.icon-pic{
+    height: 10vh;
+    border: 1px solid #6C6363;
+    border-radius: 50px;
+}
+.actions{
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+}
+.fa-pen-to-square{
+    color: green;
+    cursor: pointer;
+}
+.fa-pen-to-square:hover{
+    color: limegreen;
+}
+.fa-trash{
+    color: brown;
+    cursor: pointer;
+}
+.fa-trash:hover{
+    color: red;
+}
+.bio-bit{
+    width: 100%;
+    min-height: 80vh;
+    max-height: max-content;
+    display: flex;
+    justify-content: center;
+}
+.bio-form{
+    width: 60%;
+    min-height: 70vh;
+    max-height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: aquamarine;
+}
+.pwd-bit{
+    width: 100%;
+    min-height: 50vh;
+    max-height: max-content;
+    display: flex;
+    justify-content: center;
+}
+.pwd-form{
+    width: 60%;
+    min-height: 45vh;
+    max-height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}

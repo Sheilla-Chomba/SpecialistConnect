@@ -14,6 +14,7 @@ import { AdminViewUsersComponent } from './components/Admin/admin-view-users/adm
 import { UserReviewsComponent } from './components/User/user-reviews/user-reviews.component';
 import { UserOrdersComponent } from './components/User/user-orders/user-orders.component';
 import { SpecOrdersComponent } from './components/Specialist/spec-orders/spec-orders.component';
+import { SpecSettingsComponent } from './components/Specialist/spec-settings/spec-settings.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -24,7 +25,7 @@ export const routes: Routes = [
   { path: 'admin', component: AdminComponent,
   children:[
     {path: 'settings', component: AdminSettingsComponent},
-    {path: 'view-users', component: AdminViewUsersComponent},
+    {path: 'dashboard', component: AdminViewUsersComponent},
   ]
 },
   { path: 'user', component: UserComponent,
@@ -37,6 +38,7 @@ export const routes: Routes = [
   { path: 'spec', component: SpecComponent,
   children:[
     {path: 'dashboard', component: SpecOrdersComponent},
+    {path: 'settings', component: SpecSettingsComponent},
   ]
 },
   { path: '**', component: NotFoundComponent },
