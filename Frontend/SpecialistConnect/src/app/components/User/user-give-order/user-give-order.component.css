@@ -1,0 +1,44 @@
+.main {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+}
+.form {
+  width: 60%;
+  height: 70%;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.rev-text {
+  background-color: #dee8fb;
+  border-radius: 20px;
+  border: none;
+  width: 100%;
+  padding-left: 1vw;
+  padding-top: 1vh;
+}
+.review-btn {
+  height: 8vh;
+  width: 50%;
+  border-radius: 20px;
+  border: none;
+  background-color: #2369f2;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+}
+.review-btn:hover {
+  background-color: #03215c;
+}
+
+@media (max-width:768px) {
+    .form{
+        width: 90%;
+    }
+    
+}

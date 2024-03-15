@@ -15,6 +15,8 @@ import { UserReviewsComponent } from './components/User/user-reviews/user-review
 import { UserOrdersComponent } from './components/User/user-orders/user-orders.component';
 import { SpecOrdersComponent } from './components/Specialist/spec-orders/spec-orders.component';
 import { SpecSettingsComponent } from './components/Specialist/spec-settings/spec-settings.component';
+import { UserDashboardComponent } from './components/User/user-dashboard/user-dashboard.component';
+import { UserGiveOrderComponent } from './components/User/user-give-order/user-give-order.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -30,9 +32,11 @@ export const routes: Routes = [
 },
   { path: 'user', component: UserComponent,
   children:[
+    {path: 'dashboard', component: UserDashboardComponent},
     {path: 'settings', component: UserSettingsComponent},
     {path: 'orders', component: UserOrdersComponent},
     {path: 'reviews', component: UserReviewsComponent},
+    {path: 'give-order', component: UserGiveOrderComponent},
   ]
 },
   { path: 'spec', component: SpecComponent,
