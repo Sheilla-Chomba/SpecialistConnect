@@ -51,7 +51,49 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: aquamarine;
+}
+.job-title,.ratings,.location,.sub-btn,.job-desc{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sub-btn{
+    justify-content: space-around;
+}
+.job-desc textarea{
+    width: 58%;
+    padding-top: 2%;
+    padding-left: 2%;
+    background-color: #DEE8FB;
+    border-radius: 20px;
+    border: none;
+}
+.bio-form label{
+    font-weight: 500;
+    font-size: 18px;
+}
+.bio-form input{
+    height: 5vh;
+    width: 58%;
+    padding-left: 2%;
+    background-color: #DEE8FB;
+    border-radius: 20px;
+    border: none;
+}
+.submit-btn{
+    height: 5vh;
+    width: 60%;
+    color: white;
+    background-color: #2369F2;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.submit-btn:hover{
+    background-color: #03215C;
 }
 .pwd-bit{
     width: 100%;
@@ -68,4 +110,59 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+.old-pwd{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.old-pwd2{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.old-pwd>label{
+    font-weight: 500;
+    font-size: 18px;
+}
+.old-pwd>input{
+    height: 5vh;
+    width: 58%;
+    padding-left: 2%;
+    background-color: #DEE8FB;
+    border-radius: 20px;
+    border: none;
+}
+.pwd-btn{
+     height: 5vh;
+    width: 60%;
+    color: white;
+    background-color: #2369F2;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.pwd-btn:hover{
+    background-color: #03215C;
+}
+
+@media (max-width:768px) {
+    .bio-form{
+        width: 90%;
+    }
+    .pwd-form{
+        width: 90%;
+    }
+}
+@media (max-width:425px) {
+    .bio-form{
+        width: 98%;
+    }
+    .pwd-form{
+        width: 98%;
+    }
 }
