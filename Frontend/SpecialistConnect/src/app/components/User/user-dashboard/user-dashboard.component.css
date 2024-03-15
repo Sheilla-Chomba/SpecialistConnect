@@ -1,0 +1,94 @@
+.main{
+    width: 100%;
+    min-height: 90vh;
+    max-height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.head{
+    height: 10vh;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.select-box{
+    border-radius: 10px;
+    background-color: #DEE8FB;
+    border: none;
+    height: 4vh;
+    width: 15vw;
+    padding-inline: 1vw;
+}
+.select-box:focus{
+    outline: none;
+}
+.content{
+    width: 95%;
+    min-height: 80vh;
+    max-height: max-content;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.spec-info{
+    height: 40vh;
+    width: 30%;
+    background-color: #DEE8FB;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 1%;
+    margin-bottom: 2vh;
+    cursor: pointer;
+}
+.spec-info:hover{
+    box-shadow: 4px 4px 2px gray;
+    width: 32%;
+}
+.spec-head{
+    display: flex;
+    justify-content: space-around;
+}
+.spec-pic{
+    height: 6vh;
+    border-radius: 50px;;
+}
+.spec-job{
+    display: flex;
+    justify-content: center;
+}
+.job-btn{
+    width: 50%;
+    height: 5vh;
+    background-color: #2369F2;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+.job-btn:hover{
+    background-color: #03215c;
+}
+
+@media (max-width:768px) {
+    .spec-info{
+        width: 45%;
+    }
+    .spec-info:hover{
+        width: 47%;
+    }
+}
+@media (max-width:425px) {
+    .spec-info{
+        width: 95%;
+    }
+    .spec-info:hover{
+        width: 98%;
+        height: 42vh;
+    }
+}
