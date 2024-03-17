@@ -1,0 +1,79 @@
+.main {
+  width: 100%;
+  min-height: 90vh;
+  max-height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.head {
+  width: 95%;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+}
+.spec-img {
+  margin-right: 2vw;
+}
+.spec-image {
+  height: 12vh;
+  border-radius: 50px;
+}
+.desc {
+  width: 95%;
+  min-height: 15vh;
+  max-height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.reviews {
+  width: 95%;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rev-title{
+    height: 8vh;
+}
+.rev-content {
+  width: 100%;
+  height: 35vh;
+  background-color: #dee8fb;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+.rev1{
+    width: 90%;
+    padding: 1%;
+    background-color: white;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.invite-btn{
+    margin-top: 4vh;
+    height: 10vh;
+    width: 40vw;
+    border: none;
+    background-color: #2369F2;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+.invite-btn:hover{
+    background-color: #03215c;
+}
+
+@media (max-width:425px) {
+    .invite-btn{
+        width: 60vw;
+    }
+}

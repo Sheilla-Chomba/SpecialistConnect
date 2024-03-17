@@ -17,6 +17,7 @@ import { SpecOrdersComponent } from './components/Specialist/spec-orders/spec-or
 import { SpecSettingsComponent } from './components/Specialist/spec-settings/spec-settings.component';
 import { UserDashboardComponent } from './components/User/user-dashboard/user-dashboard.component';
 import { UserGiveOrderComponent } from './components/User/user-give-order/user-give-order.component';
+import { UserViewSpecComponent } from './components/User/user-view-spec/user-view-spec.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -37,6 +38,7 @@ export const routes: Routes = [
     {path: 'orders', component: UserOrdersComponent},
     {path: 'reviews', component: UserReviewsComponent},
     {path: 'give-order', component: UserGiveOrderComponent},
+    {path: 'view-spec', component: UserViewSpecComponent},
   ]
 },
   { path: 'spec', component: SpecComponent,
