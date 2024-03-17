@@ -1,8 +1,9 @@
 .main{
-    width: 100vw;
+    width: 98.7vw;
     height: 10vh;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 .navbar{
     width: 98%;
