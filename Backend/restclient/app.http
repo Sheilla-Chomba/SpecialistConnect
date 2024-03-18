@@ -1,0 +1,53 @@
+POST http://localhost:4100/users
+Content-Type: application/json
+
+# {
+#     "f_name": "Jane",
+#     "l_name": "Ngene",
+#     "email": "janengene12@gmail.com",
+#     "role":"user",
+#     "password": "12345678" 
+# }
+
+
+### Admin Details
+POST http://localhost:4100/users
+Content-Type: application/json
+
+{
+    "f_name": "Sheilla",
+    "l_name": "Chomba",
+    "email": "chombasheila980@gmail.com",
+    "role": "admin",
+    "password": "12345678"
+}
+
+
+### GETTING ALL USERS
+
+GET http://localhost:4100/users
+Content-Type: application/json
+# token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWQxNGEwNWUtOTMwOC00ZDIzLTkyNTgtMDMxNTJkMjY0MjdmIiwibmFtZSI6Ikdlb3JnZSBLYXJpbWkiLCJlbWFpbCI6Imdlb3JnZWthcmltaTY5QGdtYWlsLmNvbSIsInBob25lX251bWJlciI6IjA3MTMyNDM0MjQzIiwicm9sZSI6ImN1c3RvbWVyIiwiaXNXZWxjb21lZCI6dHJ1ZSwiaWF0IjoxNzA3MzA3MDM2fQ.ChIqA4PKoIEEVzFv4rc-a_2gKBt3qMUIuql7INrSNq0
+
+### GETTING USER BY ID
+
+GET http://localhost:4100/users/8dc0de98-3258-4223-87b0-d42d1b76cfdd
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGRjMGRlOTgtMzI1OC00MjIzLTg3YjAtZDQyZDFiNzZjZmRkIiwiZl9uYW1lIjoiU2hlaWxsYSIsImxfbmFtZSI6IkNob21iYSIsImVtYWlsIjoiY2hvbWJhc2hlaWxhOTgwQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlzV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MDgzNjcxMjksImV4cCI6MTcwODM3MDcyOX0.p9aTi923UZgkamQp9NJm8pssHW56TjY5doaNep9o7_I
+
+###
+PUT http://localhost:4100/users/update/8dc0de98-3258-4223-87b0-d42d1b76cfdd
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGRjMGRlOTgtMzI1OC00MjIzLTg3YjAtZDQyZDFiNzZjZmRkIiwiZl9uYW1lIjoiU2hlaWxsYSIsImxfbmFtZSI6IkNob21iYSIsImVtYWlsIjoiY2hvbWJhc2hlaWxhOTgwQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlzV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MDgzNjcxMjksImV4cCI6MTcwODM3MDcyOX0.p9aTi923UZgkamQp9NJm8pssHW56TjY5doaNep9o7_I
+
+
+{
+    "f_name": "Sheilla",
+    "l_name": "Chomba",
+    "email": "chombasheila980@gmail.com",
+    "password": "12345678"
+}
+
+###
+
+DELETE http://localhost:4100/users/delete/0b525987-47df-43ee-85a6-ab856849313b
+Content-Type: application/json
