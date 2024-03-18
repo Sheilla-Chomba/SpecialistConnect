@@ -10,7 +10,7 @@ export const sqlConfig = {
   password: process.env.DB_PWD as string,
   database: process.env.DB_NAME as string,
   server: process.env.SERVER as string,
-  secret:process.env.SECRET as string,
+  SECRET:process.env.SECRET as string,
 
   pool: {
     max: 10,

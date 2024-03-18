@@ -6,10 +6,11 @@ console.log(process.env.DB_NAME);
 
 
 export const sqlConfig = {
-  user: "sa",
-  password: "Nairobi@2023",
-  database: "SpecialistConnect",
-  server: "DESKTOP-E5BURTF",
+  user: process.env.DB_USER as string,
+  password: process.env.DB_PWD as string,
+  database: process.env.DB_NAME as string,
+  server: process.env.SERVER as string,
+  SECRET: process.env.SECRET as string,
   pool: {
     max: 10,
     min: 0,

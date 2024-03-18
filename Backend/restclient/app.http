@@ -1,44 +1,39 @@
 POST http://localhost:4100/users
 Content-Type: application/json
 
-# {
-#     "f_name": "Jane",
-#     "l_name": "Ngene",
-#     "email": "janengene12@gmail.com",
-#     "role":"user",
-#     "password": "12345678" 
-# }
+{
+    "f_name": "Sharon",
+    "l_name": "Cherotich",
+    "email": "sharoncherotich112@gmail.com",
+    "role":"spec",
+    "password": "12345678" 
+}
 
 
 ### Admin Details
-POST http://localhost:4100/users
-Content-Type: application/json
-
-{
-    "f_name": "Sheilla",
-    "l_name": "Chomba",
-    "email": "chombasheila980@gmail.com",
-    "role": "admin",
-    "password": "12345678"
-}
+# {
+#     "f_name": "Sheilla",
+#     "l_name": "Chomba",
+#     "email": "chombasheila980@gmail.com",
+#     "role": "admin",
+#     "password": "12345678"
+# }
 
 
 ### GETTING ALL USERS
 
 GET http://localhost:4100/users
 Content-Type: application/json
-# token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWQxNGEwNWUtOTMwOC00ZDIzLTkyNTgtMDMxNTJkMjY0MjdmIiwibmFtZSI6Ikdlb3JnZSBLYXJpbWkiLCJlbWFpbCI6Imdlb3JnZWthcmltaTY5QGdtYWlsLmNvbSIsInBob25lX251bWJlciI6IjA3MTMyNDM0MjQzIiwicm9sZSI6ImN1c3RvbWVyIiwiaXNXZWxjb21lZCI6dHJ1ZSwiaWF0IjoxNzA3MzA3MDM2fQ.ChIqA4PKoIEEVzFv4rc-a_2gKBt3qMUIuql7INrSNq0
 
 ### GETTING USER BY ID
 
-GET http://localhost:4100/users/8dc0de98-3258-4223-87b0-d42d1b76cfdd
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGRjMGRlOTgtMzI1OC00MjIzLTg3YjAtZDQyZDFiNzZjZmRkIiwiZl9uYW1lIjoiU2hlaWxsYSIsImxfbmFtZSI6IkNob21iYSIsImVtYWlsIjoiY2hvbWJhc2hlaWxhOTgwQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlzV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MDgzNjcxMjksImV4cCI6MTcwODM3MDcyOX0.p9aTi923UZgkamQp9NJm8pssHW56TjY5doaNep9o7_I
+GET http://localhost:4100/users/bc0690de-aee6-4533-9144-1416cffd7a09
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYmMwNjkwZGUtYWVlNi00NTMzLTkxNDQtMTQxNmNmZmQ3YTA5IiwiZl9uYW1lIjoiU2hlaWxsYSIsImxfbmFtZSI6IkNob21iYSIsImVtYWlsIjoiY2hvbWJhc2hlaWxhOTgwQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlzV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MTA3NjA5MjUsImV4cCI6MTcxMDc2NDUyNX0.UymVofSnWsbXzjm5F54dhAYiK8WG6Dbl6hRB__8J02Y
 
 ###
-PUT http://localhost:4100/users/update/8dc0de98-3258-4223-87b0-d42d1b76cfdd
+PUT http://localhost:4100/users/update/bc0690de-aee6-4533-9144-1416cffd7a09
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGRjMGRlOTgtMzI1OC00MjIzLTg3YjAtZDQyZDFiNzZjZmRkIiwiZl9uYW1lIjoiU2hlaWxsYSIsImxfbmFtZSI6IkNob21iYSIsImVtYWlsIjoiY2hvbWJhc2hlaWxhOTgwQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlzV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MDgzNjcxMjksImV4cCI6MTcwODM3MDcyOX0.p9aTi923UZgkamQp9NJm8pssHW56TjY5doaNep9o7_I
-
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYmMwNjkwZGUtYWVlNi00NTMzLTkxNDQtMTQxNmNmZmQ3YTA5IiwiZl9uYW1lIjoiU2hlaWxsYSIsImxfbmFtZSI6IkNob21iYSIsImVtYWlsIjoiY2hvbWJhc2hlaWxhOTgwQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlzV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MTA3NjA5MjUsImV4cCI6MTcxMDc2NDUyNX0.UymVofSnWsbXzjm5F54dhAYiK8WG6Dbl6hRB__8J02Y
 
 {
     "f_name": "Sheilla",
@@ -49,5 +44,6 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGRjMGRlOTgtMzI1OC00
 
 ###
 
-DELETE http://localhost:4100/users/delete/0b525987-47df-43ee-85a6-ab856849313b
+DELETE http://localhost:4100/users/delete/db15362c-5770-4c2b-8897-cfb733fcec2f
 Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZGIxNTM2MmMtNTc3MC00YzJiLTg4OTctY2ZiNzMzZmNlYzJmIiwiZl9uYW1lIjoiSmFuZSIsImxfbmFtZSI6Ik5nZW5lIiwiZW1haWwiOiJqYW5lbmdlbmUxMkBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlzV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MTA3NjExMjEsImV4cCI6MTcxMDc2NDcyMX0.y0fZ347xuQiLRK-BEhDhdeoAHsBnTe_Q3lcQR9ob6vg

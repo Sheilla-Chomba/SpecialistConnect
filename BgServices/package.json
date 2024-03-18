@@ -1,7 +1,7 @@
 {
-  "name": "rhyde-bgservices",
+  "name": "specialistconnect-bgservices",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is the background services of SpecialistConnect",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

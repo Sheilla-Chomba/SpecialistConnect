@@ -85,6 +85,7 @@ export const updateUser = async(req:Request, res: Response)=>{
         const id = req.params.id
 
         const {f_name, l_name,email, password}:User = req.body
+        const hashed_pwd = await bcrypt.hash(password, 5);
 
         const pool = await mssql.connect(sqlConfig)
 
@@ -96,7 +97,7 @@ export const updateUser = async(req:Request, res: Response)=>{
             .input("l_name", mssql.VarChar, l_name)
             .input("email", mssql.VarChar, email)
             // .input("role", mssql.VarChar, role)
-            .input("Password", mssql.VarChar, password)
+            .input("Password", mssql.VarChar, hashed_pwd)
             .execute("updateUser")
         ).rowsAffected;
 

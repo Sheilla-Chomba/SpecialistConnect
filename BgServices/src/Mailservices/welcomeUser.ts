@@ -13,11 +13,11 @@ export const welcomeUser = async()=>{
     console.log(users);
     
     for(let user of users){
-        ejs.renderFile('Templates/welcomeUser.ejs', {CustomerName: user.name}, async(error, data)=>{
+        ejs.renderFile('Templates/welcomeUser.ejs', {CustomerName: user.f_name}, async(error, data)=>{
             let mailOptions = {
-                from: "gamesmy177@gmail.com",
+                from: "chombasheila980@gmail.com",
                 to: user.email,
-                subject: "Welcome to Rhyde",
+                subject: "Welcome to SpecialistConnect",
                 html: data
             }
 

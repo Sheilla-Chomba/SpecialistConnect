@@ -2,7 +2,7 @@ POST http://localhost:4100/auth/login
 Content-Type: application/json
 
 {
-    "email": "chombasheila980@gmail.com",
+    "email": "janengene12@gmail.com",
     "password": "12345678"
 }
 
@@ -16,6 +16,6 @@ Content-Type: application/json
 }
 
 ####
-POST http://localhost:4100/auth/checkdetails
+GET http://localhost:4100/auth/checkdetails
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGRjMGRlOTgtMzI1OC00MjIzLTg3YjAtZDQyZDFiNzZjZmRkIiwiZl9uYW1lIjoiU2hlaWxsYSIsImxfbmFtZSI6IkNob21iYSIsImVtYWlsIjoiY2hvbWJhc2hlaWxhOTgwQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlzV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MDg0Mjk3MzksImV4cCI6MTcwODQzMzMzOX0.wqI8ohtiAGjRxArirV5zsQT6PoqV91kqjgquNvXuyAM
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZGIxNTM2MmMtNTc3MC00YzJiLTg4OTctY2ZiNzMzZmNlYzJmIiwiZl9uYW1lIjoiSmFuZSIsImxfbmFtZSI6Ik5nZW5lIiwiZW1haWwiOiJqYW5lbmdlbmUxMkBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlzV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MTA3NjExMjEsImV4cCI6MTcxMDc2NDcyMX0.y0fZ347xuQiLRK-BEhDhdeoAHsBnTe_Q3lcQR9ob6vg
