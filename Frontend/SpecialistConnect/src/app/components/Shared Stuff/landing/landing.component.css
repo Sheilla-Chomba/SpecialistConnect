@@ -6,38 +6,28 @@
     flex-direction: column;
     align-items: center;
 }
-/* @keyframes slide {
-    0%{
-        transform: translateX(0);
-    }
-    30%{
-        transform: translateX(0);
-    }
-    33%{
-        transform: translateX(-100%);
-    }
-    60%{
-        transform: translateX(-100%);
-    }
-    66%{
-        transform: translateX(-200%);
-    }
-    100%{
-        transform: translateX(-200%);
-    }
-} */
-@keyframes slide {
-  from {
-    transform: translateX(0);
+@keyframes change {
+  0%{
+    background-image: url(../../../../assets/Land1.jpg);
   }
-  to {
-    transform: translateX(-100%);
-  } 
+   33%{
+    background-image: url(../../../../assets/Land2.jpg);
+  }
+    66%{
+    background-image: url(../../../../assets/Land3.jpg);
+  }
+   100%{
+    background-image: url(../../../../assets/Land1.jpg);
+  }
 }
 .landing-image{
     width: 100%;
     height: 100vh;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 .land-img{
     width: 100%;
@@ -45,16 +35,20 @@
     display: inline-flex;
     position: absolute;
     overflow-x: hidden;
-    animation: 30s slide infinite linear;
+    background-image: url(../../../../assets/Land1.jpg);
+    background-size: cover;
+    filter: brightness(60%);
+    animation: 10s change infinite steps(1);
 }
-.land1,.land2,.land3{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.land-text{
+    color: white;
+    position: relative;
+    margin-left: -50%;
 }
 .pop-services{
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
+    max-height: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,13 +56,15 @@
 }
 .pop-serve{
     width: 95%;
-    height: 35vh;
+    min-height: 35vh;
+    max-height: max-content;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 2vh;
 }
 .pop1{
-    height: 100%;
+    height: 35vh;
     width: 23%;
     display: flex;
     align-items: center;
@@ -256,4 +252,41 @@
     width: 90%;
     height: 85%;
     object-fit: cover;
+}
+
+@media (max-width:768px) {
+    .land-text{
+        margin-left: 0%;
+    }
+    .pop1{
+        width: 45%;
+        margin-bottom: 2vh;
+    }
+    .data-serve{
+        width: 45%;
+    }
+}
+@media (max-width:425px) {
+    .pop1{
+        width: 100%;
+        margin-bottom: 2vh;
+    }
+    .data-serve{
+        width: 100%;
+    }
+    .best-cont{
+        width: 95%;
+    }
+    .best-img{
+        display: none;
+    }
+    .banner-text{
+        width: 100%;
+    }
+    .banner-img{
+        display: none;
+    }
+    .banner-btn{
+        width: 80vw;
+    }
 }
