@@ -10,6 +10,13 @@ export const createSpec = async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
 
+    const existingId = await callGetIDProcedure(id);
+    if (!existingId) {
+      return res.status(404).json({
+        error: "Spec with the provided id not found",
+      });
+    }
+
     const { job_title, spec_loc, spec_desc, ratings,prof_image}: Spec = req.body;
 
     let { error } = registerSpecSchema.validate(req.body);
@@ -40,10 +47,28 @@ export const createSpec = async (req: Request, res: Response) => {
       message: "Profile created successfully",
     });
   } catch (error) {
-    return res.json({ error: error });
+    return res.json({ error: "error" });
   }
 };
+async function callGetIDProcedure(spec_id: string) {
+  try {
+    const pool = await mssql.connect(sqlConfig);
 
+    const result = await pool.request()
+            .input('spec_id', mssql.VarChar, spec_id)
+            .execute('getSpecID');
+
+        if (result.recordset.length > 0) {
+            const existingId = result.recordset[0];
+            return existingId;
+        } else {
+            return null;
+        }
+  } catch (error) {
+    console.error("Error calling getID procedure:", error);
+    throw error;
+  }
+}
 export const getSpecs = async (req: Request, res: Response) => {
   try {
     const pool = await mssql.connect(sqlConfig);

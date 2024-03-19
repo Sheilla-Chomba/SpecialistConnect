@@ -1,10 +1,10 @@
-POST http://localhost:4100/spec/346524d3-380b-452d-965d-e0796d9b8168
+POST http://localhost:4100/spec/7f63e5f2-b9ce-4548-999e-273197e6ea69
 Content-Type: application/json
 
 {
-    "job_title": "Web Developer",
-    "spec_loc": "Nyeri, Kenya",
-    "spec_desc": "I am really good at NodeJs and Angular",
+    "job_title": "Digital Marketer",
+    "spec_loc": "Eldoret, Kenya",
+    "spec_desc": "Trust your business with me",
     "ratings":2000,
     "prof_image":"https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png"
 }
@@ -14,7 +14,7 @@ Content-Type: application/json
 GET http://localhost:4100/spec
 ### GETTING USER BY ID
 
-GET http://localhost:4100/spec/346524d3-380b-452d-965d-e0796d9b8168
+GET http://localhost:4100/spec/7f63e5f2-b9ce-4548-999e-273197e6ea69
 
 ###
 PUT http://localhost:4100/spec/update/4a5ef199-868a-4c27-b797-c615aef2044f

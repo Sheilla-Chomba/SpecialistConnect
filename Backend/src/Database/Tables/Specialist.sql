@@ -5,5 +5,6 @@ CREATE TABLE Spec(
     spec_desc VARCHAR(8000) NOT NULL,
     ratings INT NOT NULL
 )
-ALTER TABLE Spec ADD prof_image VARCHAR(255)
+ALTER TABLE Spec
+ADD CONSTRAINT UC_spec_id UNIQUE (spec_id);
 
