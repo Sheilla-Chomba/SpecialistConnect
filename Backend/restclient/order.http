@@ -1,0 +1,12 @@
+POST http://localhost:4100/order
+Content-Type: application/json
+
+{
+    "spec_id": "7f63e5f2-b9ce-4548-999e-273197e6ea69",
+    "user_id": "db15362c-5770-4c2b-8897-cfb733fcec2f",
+    "order_desc": "Trust your business with me"
+}
+
+### GETTING ALL ORDERS
+
+GET http://localhost:4100/order
