@@ -1,0 +1,29 @@
+POST http://localhost:4100/spec/346524d3-380b-452d-965d-e0796d9b8168
+Content-Type: application/json
+
+{
+    "job_title": "Web Developer",
+    "spec_loc": "Nyeri, Kenya",
+    "spec_desc": "I am really good at NodeJs and Angular",
+    "ratings":2000,
+    "prof_image":"https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png"
+}
+
+### GETTING USER BY ID
+
+GET http://localhost:4100/spec
+### GETTING USER BY ID
+
+GET http://localhost:4100/spec/346524d3-380b-452d-965d-e0796d9b8168
+
+###
+PUT http://localhost:4100/spec/update/4a5ef199-868a-4c27-b797-c615aef2044f
+Content-Type: application/json
+
+{
+    "job_title": "Data Analyst",
+    "spec_loc": "Nairobi, Kenya",
+    "spec_desc": "Specilize in data cleaning",
+    "ratings":1000,
+    "prof_image":"https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png"
+}

@@ -2,9 +2,9 @@ POST http://localhost:4100/users
 Content-Type: application/json
 
 {
-    "f_name": "Sharon",
-    "l_name": "Cherotich",
-    "email": "sharoncherotich112@gmail.com",
+    "f_name": "Kennedy",
+    "l_name": "Maina",
+    "email": "kennynet66@gmail.com",
     "role":"spec",
     "password": "12345678" 
 }
