@@ -1,11 +1,12 @@
 import mssql from "mssql";
 import { Request, Response } from "express";
-import { Order } from "../Interfaces/order";
+import { Order, Updated_Order } from "../Interfaces/order";
 import { sqlConfig } from "../Config/sql.config";
 import { registerOrderSchema } from "../Validators/order.validators";
 import { v4 } from "uuid";
 
 const orders: Order[] = [];
+const updated_orders: Updated_Order[] = [];
 
 export const createOrder = async (req: Request, res: Response) => {
   try {
@@ -52,6 +53,49 @@ export const getOrders = async (req: Request, res: Response) => {
 
     return res.status(200).json({
       orders: allorders,
+    });
+  } catch (error) {
+    return res.json({ error });
+  }
+};
+
+export const getOneOrder = async(req: Request, res:Response)=>{
+    try {
+        const id = req.params.id
+
+        const pool = await mssql.connect(sqlConfig)
+
+        let order = (await pool.request().input("order_id", id).execute('getOneOrder')).recordset
+
+        return res.json({
+            order
+        })
+    } catch (error) {
+        return res.json({error})
+    }
+}
+
+export const updateOrder = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+
+    const { order_desc, status }: Updated_Order = req.body;
+
+    const pool = await mssql.connect(sqlConfig);
+
+    let result = (
+      await pool
+        .request()
+        .input("order_id", id)
+        .input("order_desc", mssql.VarChar, order_desc)
+        .input("status", mssql.VarChar, status)
+        .execute("updateOrder")
+    ).rowsAffected;
+
+    // console.log(result);
+
+    return res.status(200).json({
+      message: "Order details successfully updated",
     });
   } catch (error) {
     return res.json({ error });

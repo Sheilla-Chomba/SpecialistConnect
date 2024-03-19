@@ -10,3 +10,16 @@ Content-Type: application/json
 ### GETTING ALL ORDERS
 
 GET http://localhost:4100/order
+
+### GETTING BY ID
+
+GET http://localhost:4100/order/f9b478e2-e03b-42b9-bc3c-0eef869172ed
+
+### UPDATING ORDERS
+PUT http://localhost:4100/order/update/f9b478e2-e03b-42b9-bc3c-0eef869172ed
+Content-Type: application/json
+
+{
+    "order_desc": "Trust your business with us",
+    "status":"Pending"
+}
