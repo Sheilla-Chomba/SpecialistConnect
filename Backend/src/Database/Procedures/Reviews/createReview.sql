@@ -5,15 +5,9 @@ CREATE OR ALTER PROCEDURE createReview(
 )
 AS
 BEGIN
-    IF NOT EXISTS (SELECT * FROM Users WHERE user_id=@user_id AND role ='user' AND isDeleted=0
-        AND EXISTS
-
-    (SELECT * FROM Users
-        INNER JOIN Spec ON Users.user_id = Spec.spec_id
-        WHERE Spec.spec_id = @spec_id)
-    )
+    IF NOT EXISTS (SELECT * FROM Orders WHERE order_id=@order_id AND status ='Completed')
         BEGIN 
-            DECLARE @error VARCHAR(100) = 'No user or spec found';
+            DECLARE @error VARCHAR(100) = 'No order found';
             RAISERROR(@error, 16, 1);
             RETURN;
         END

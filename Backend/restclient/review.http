@@ -1,0 +1,19 @@
+POST http://localhost:4100/review
+Content-Type: application/json
+
+{
+    "order_id": "f9b478e2-e03b-42b9-bc3c-0eef869172ed",
+    "review_desc": "Thank you for the amazing job"
+}
+
+### GETTING ALL REVIEWS
+
+GET http://localhost:4100/review
+
+### GETTING BY ID
+
+GET http://localhost:4100/review/7bd44291-6763-4366-8c34-482398ced995
+
+### GETTING ALL SPEC REVIEWS BY ID
+
+GET http://localhost:4100/review/spec/7f63e5f2-b9ce-4548-999e-273197e6ea69

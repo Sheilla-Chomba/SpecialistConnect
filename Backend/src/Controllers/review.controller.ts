@@ -40,4 +40,49 @@ export const createReview = async (req: Request, res: Response) => {
   } catch (error) {
     return res.json({ error: "error" });
   }
+}
+
+export const getReviews = async (req: Request, res: Response) => {
+  try {
+    const pool = await mssql.connect(sqlConfig);
+    let allreviews = (await pool.request().execute("getAllReviews")).recordset;
+
+    return res.status(200).json({
+      reviews: allreviews,
+    });
+  } catch (error) {
+    return res.json({ error });
+  }
 };
+
+export const getOneReview = async(req: Request, res:Response)=>{
+    try {
+        const id = req.params.id
+
+        const pool = await mssql.connect(sqlConfig)
+
+        let review = (await pool.request().input("review_id", id).execute('getOneReview')).recordset
+
+        return res.json({
+            review
+        })
+    } catch (error) {
+        return res.json({error})
+    }
+}
+
+export const getSpecReviews = async(req: Request, res:Response)=>{
+    try {
+        const id = req.params.id
+
+        const pool = await mssql.connect(sqlConfig)
+
+        let reviews = (await pool.request().input("spec_id", id).execute('getSpecReviews')).recordset
+
+        return res.json({
+            reviews
+        })
+    } catch (error) {
+        return res.json({error})
+    }
+}
