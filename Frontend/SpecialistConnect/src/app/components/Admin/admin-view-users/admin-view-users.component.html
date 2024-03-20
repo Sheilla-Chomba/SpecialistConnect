@@ -20,15 +20,17 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
+                    <th>Role</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Jane</td>
-                    <td>Doe</td>
-                    <td>janedoemail</td>
+                <tr *ngFor="let user of users ; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{user.f_name}}</td>
+                    <td>{{user.l_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.role}}</td>
                     <td>
                         <i class="fa-solid fa-trash"></i>
                     </td>
