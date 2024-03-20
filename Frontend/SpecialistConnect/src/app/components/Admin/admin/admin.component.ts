@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { AuthServiceService } from '../../../services/Auth-Services/auth-service.service';
 
 @Component({
   selector: 'app-admin',
@@ -10,7 +11,19 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './admin.component.css',
 })
 export class AdminComponent {
-  constructor(private route: Router) {}
+  email!: string;
+  token!: string;
+
+  constructor(private route: Router, private api: AuthServiceService) {
+    // this.email = '';
+    // this.token = '';
+    this.getToken()
+  }
+
+  getToken(){
+    this.token = localStorage.getItem('SpecilistConnect_token') as string;
+    this.getEmail();
+  }
 
   showModalMenuAdmin() {
     let modalBg = document.querySelector('.modal-bg');
@@ -27,5 +40,10 @@ export class AdminComponent {
     localStorage.removeItem('SpecilistConnect_token');
     this.route.navigate(['/login']);
   }
-  
+  getEmail() {
+   this.api.readToken(this.token).subscribe((response) => {
+      console.log(response);
+      this.email = response.info.email;
+    });
+  }
 }
