@@ -15,7 +15,7 @@
                 </li>
             </ul>
         </div>
-        <div class="logout" routerLink="/login">
+        <div class="logout" (click)="logout()">
             <p>
                 <i class="fa-solid fa-right-from-bracket fa-lg"></i>
                 Logout
@@ -57,7 +57,7 @@
                         <i class="fa-solid fa-gear fa-lg"></i>
                         Settings
                     </li>
-                    <li routerLink="/login">
+                    <li (click)="logout()">
                         <i class="fa-solid fa-right-from-bracket fa-lg"></i>
                         Logout
                     </li>

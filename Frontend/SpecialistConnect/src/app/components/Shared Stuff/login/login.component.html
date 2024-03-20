@@ -30,14 +30,20 @@
 
         </div>
         <div class="form-div">
-            <form class="form">
+            <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
                 <div class="email-div">
                     <label for="">Email</label><br>
-                    <input type="email" placeholder="janedoe@gmail.com" class="email"> 
+                    <input type="email" placeholder="janedoe@gmail.com" class="email" formControlName="email">
+                    <div *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched" class="error-message" style="color: red;">
+                        Email is required.
+                    </div>
                 </div>
                 <div class="password-div">
                     <label for="">Password</label><br>
-                    <input type="password" placeholder="*************" class="password">
+                    <input type="password" placeholder="*************" class="password" formControlName="pwd">
+                    <div *ngIf="loginForm.get('pwd')?.errors?.['required'] && loginForm.get('pwd')?.touched" class="error-message" style="color: red;">
+                        Password is required.
+                    </div>
                     <div class="forgot-div">
                         <p>Forgot Password</p>
                     </div>

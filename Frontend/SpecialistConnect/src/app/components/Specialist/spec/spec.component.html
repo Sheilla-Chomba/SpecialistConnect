@@ -19,7 +19,7 @@
                 </li>
             </ul>
         </div>
-        <div class="logout">
+        <div class="logout" (click)="logout()">
             <p>
                 <i class="fa-solid fa-right-from-bracket fa-lg"></i>
                 Logout
@@ -65,7 +65,7 @@
                         <i class="fa-solid fa-list-check fa-lg"></i>
                         Orders
                     </li>
-                    <li>
+                    <li (click)="logout()">
                         <i class="fa-solid fa-right-from-bracket fa-lg"></i>
                         Logout
                     </li>
