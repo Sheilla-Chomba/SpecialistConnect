@@ -35,28 +35,48 @@
 
         </div>
         <div class="form-div">
-            <form class="form">
+            <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
                 <div class="name-div">
                     <div class="fname-div">
                         <label for="">First Name</label><br>
-                        <input type="text" placeholder="Jane" class="fname">
+                        <input type="text" placeholder="Jane" class="fname" formControlName="fname">
+                        <div *ngIf="registerForm.get('fname')?.errors?.['required'] && registerForm.get('fname')?.touched" class="error-message" style="color: red;">
+                        First Name required.
+                        </div>
                     </div>
                     <div class="lname-div">
                         <label for="">Last Name</label><br>
-                        <input type="text" placeholder="Doe" class="lname">
+                        <input type="text" placeholder="Doe" class="lname" formControlName="lname">
+                        <div *ngIf="registerForm.get('lname')?.errors?.['required'] && registerForm.get('lname')?.touched" class="error-message" style="color: red;">
+                        Last Name required.
+                        </div>
                     </div>
                 </div>
                 <div class="email-div">
                     <label for="">Email</label><br>
-                    <input type="email" placeholder="janedoe@gmail.com" class="email"> 
+                    <input type="email" placeholder="janedoe@gmail.com" class="email" formControlName="email">
+                    <div *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched" class="error-message" style="color: red;">
+                        Email required.
+                    </div>
+                    <div *ngIf="registerForm.get('email')?.errors?.['email'] &&registerForm.get('email')?.touched" class="error-message" style="color: red;">
+                        Invalid email format.
+                    </div> 
                 </div>
                 <div class="password-div">
                     <label for="">New Password</label><br>
-                    <input type="password" placeholder="*************" class="password">
+                    <input type="password" placeholder="*************" class="password" formControlName="pwd">
+                    <div *ngIf="registerForm.get('pwd')?.invalid && registerForm.get('pwd')?.touched" class="error-message" style="color: red;">
+                    <div *ngIf="registerForm.get('pwd')?.errors?.['required']">Password is required.</div>
+                    <div *ngIf="registerForm.get('pwd')?.errors?.['minlength'] && !registerForm.get('pwd')?.errors?.['required']">Password must be at least 6 characters long.</div>
+                    </div>
                 </div>
                 <div class="password-div">
                     <label for="">Confirm New Password</label><br>
-                    <input type="password" placeholder="*************" class="password">
+                    <input type="password" placeholder="*************" class="password" formControlName="confirmPwd">
+                    <div *ngIf="registerForm.get('confirmPwd')?.errors && registerForm.get('confirmPwd')?.touched" class="error-message" style="color: red;">
+                    <div *ngIf="registerForm.get('confirmPwd')?.errors?.['required']">Confirm Password is required.</div>
+                    <div *ngIf="registerForm.get('confirmPwd')?.errors?.['mismatch'] && !registerForm.get('confirmPwd')?.errors?.['required']">Passwords do not match.</div>
+                    </div>
                 </div>
                 <div class="submit-btn">
                     <button class="sign-in-btn">Sign in</button>
