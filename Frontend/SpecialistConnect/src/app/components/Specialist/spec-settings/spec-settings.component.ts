@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { UserServiceService } from '../../../services/User-Service/user-service.service';
 import { AuthServiceService } from '../../../services/Auth-Services/auth-service.service';
 import { SpecServicesService } from '../../../services/Spec-Services/spec-services.service';
+import { specRegister } from '../../../interfaces/spec';
 
 @Component({
   selector: 'app-spec-settings',
@@ -20,6 +21,7 @@ export class SpecSettingsComponent {
   showSuccessMessage: boolean = false;
 
   img_src:string ="../../../../assets/icon-1633249_1280.png"
+  spec!:specRegister
 
   constructor(
     private fb: FormBuilder,
@@ -28,6 +30,7 @@ export class SpecSettingsComponent {
     public authApi: AuthServiceService,
     public specApi:SpecServicesService
   ) {
+    this.getUserDetails(),
     this.settingsForm = this.fb.group(
       {
         email: ['', [Validators.required, Validators.email]],
@@ -72,6 +75,21 @@ export class SpecSettingsComponent {
         this.route.navigate(['/login']);
       }, 3000);
     });
+  }
+
+  getUserDetails(){
+    this.specApi.getOneSpecDetails().subscribe(res=>{
+      console.log(res);
+      this.spec = res.spec[0]
+      
+      this.bioSettingsForm.patchValue({
+        j_title: this.spec.job_title,
+        j_loc: this.spec.spec_loc,
+        j_desc: this.spec.spec_desc,
+        j_rates: this.spec.ratings
+      });
+      this.img_src=this.spec.prof_image
+    })
   }
 
   bioSettings(){

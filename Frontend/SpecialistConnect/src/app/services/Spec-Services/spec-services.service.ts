@@ -33,9 +33,20 @@ export class SpecServicesService {
        
     });
   }
+  getOneSpecDetails(){
+    let spec_id = this.user_id
+    // console.log(spec_id);
+    
+    return this.http.get<{spec:specRegister[]}>(`http://localhost:4100/spec/${spec_id}`, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+      })
+    })
+  }
+
   updateSpec(specUpdate:specRegister){
     let spec_id = this.user_id
-    
+
     return this.http.put<{message:string, error:string}>(`http://localhost:4100/spec/update/${spec_id}`, specUpdate)
   };
 }

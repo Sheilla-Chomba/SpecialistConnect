@@ -31,6 +31,7 @@ export class SpecComponent {
   logout() {
     localStorage.removeItem('SpecilistConnect_token');
     this.route.navigate(['/login']);
+    
   }
   
   getToken() {
