@@ -122,7 +122,7 @@ export const updateSpec = async (req: Request, res: Response) => {
     // console.log(result);
 
     return res.status(200).json({
-      message: "Spec details successfully",
+      message: "Details successfully updated",
     });
   } catch (error) {
     return res.json({ error });

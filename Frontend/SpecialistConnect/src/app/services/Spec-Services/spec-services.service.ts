@@ -33,6 +33,11 @@ export class SpecServicesService {
        
     });
   }
+  updateSpec(specUpdate:specRegister){
+    let spec_id = this.user_id
+    
+    return this.http.put<{message:string, error:string}>(`http://localhost:4100/spec/update/${spec_id}`, specUpdate)
+  };
 }
 
 

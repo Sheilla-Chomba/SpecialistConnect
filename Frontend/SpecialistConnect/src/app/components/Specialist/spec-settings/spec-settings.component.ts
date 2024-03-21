@@ -19,8 +19,6 @@ export class SpecSettingsComponent {
   successMessage: string = '';
   showSuccessMessage: boolean = false;
 
-  user_id!: string;
-  token!: string;
   img_src:string ="../../../../assets/icon-1633249_1280.png"
 
   constructor(
@@ -44,7 +42,6 @@ export class SpecSettingsComponent {
       j_loc: ['', [Validators.required]],
       j_rates: ['', [Validators.required]],
     });
-    // this.getUserId()
   }
   passwordMatchValidator(formGroup: FormGroup) {
     const passwordControl = formGroup.get('pwd');
@@ -85,12 +82,11 @@ export class SpecSettingsComponent {
       ratings: this.bioSettingsForm.value.j_rates,
       prof_image: this.img_src,
     };
-    // console.log(bio);
     
-    this.specApi.registerSpec(bio).subscribe((response) => {
+    this.specApi.updateSpec(bio).subscribe((response) => {
       console.log(response);
     })
-    this.successMessage = 'Spec Created successful';
+    this.successMessage = 'Spec Updated successful';
     this.showSuccessMessage = true;
     this.bioSettingsForm.reset();
 
@@ -100,15 +96,4 @@ export class SpecSettingsComponent {
     }, 2000);
   }
   
-  getToken() {
-    this.token = localStorage.getItem('SpecilistConnect_token') as string;
-    return this.token;
-  }
-  getUserId() {
-    this.authApi.readToken(this.getToken()).subscribe((response) => {
-      console.log(response);
-      this.user_id = response.info.user_id;
-      return this.user_id;
-    });
-  }
 }
