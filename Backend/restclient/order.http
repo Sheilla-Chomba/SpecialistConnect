@@ -3,8 +3,8 @@ Content-Type: application/json
 
 {
     "spec_id": "7f63e5f2-b9ce-4548-999e-273197e6ea69",
-    "user_id": "db15362c-5770-4c2b-8897-cfb733fcec2f",
-    "order_desc": "Trust your business with me"
+    "user_id": "f4077bec-4bf2-4cdb-afed-28b129126450",
+    "order_desc": "Digital Markeeting for my business"
 }
 
 ### GETTING ALL ORDERS
@@ -14,6 +14,10 @@ GET http://localhost:4100/order
 ### GETTING BY ID
 
 GET http://localhost:4100/order/f9b478e2-e03b-42b9-bc3c-0eef869172ed
+
+### GETTING BY ID FOR EACH SPECIALIST
+
+GET http://localhost:4100/order/spec/7f63e5f2-b9ce-4548-999e-273197e6ea69
 
 ### UPDATING ORDERS
 PUT http://localhost:4100/order/update/f9b478e2-e03b-42b9-bc3c-0eef869172ed

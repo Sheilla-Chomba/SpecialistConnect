@@ -2,10 +2,10 @@ POST http://localhost:4100/users
 Content-Type: application/json
 
 {
-    "f_name": "Daniel",
-    "l_name": "Kiama",
-    "email": "muriithikiamad1@gmail.com",
-    "role":"spec",
+    "f_name": "Sheills",
+    "l_name": "Maggie",
+    "email": "chombasheilla@gmail.com",
+    "role":"user",
     "password": "12345678" 
 }
 
