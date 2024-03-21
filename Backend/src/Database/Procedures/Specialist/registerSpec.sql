@@ -20,3 +20,4 @@ BEGIN
             VALUES(@spec_id,@job_title,@spec_loc,@spec_desc,@ratings,@prof_image)
         END
 END
+

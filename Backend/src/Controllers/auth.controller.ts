@@ -57,7 +57,7 @@ export const loginUser = async (req: Request, res: Response)=>{
               loginCredentials[0],
               sqlConfig.SECRET || "IUTR87GJWEF" as string,
               {
-                expiresIn: "3600s",
+                expiresIn: "36000s",
               }
             );
 

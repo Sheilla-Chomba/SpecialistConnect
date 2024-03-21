@@ -33,7 +33,7 @@ export class SpecComponent {
     this.route.navigate(['/login']);
   }
   
-   getToken() {
+  getToken() {
     this.token = localStorage.getItem('SpecilistConnect_token') as string;
     return this.token;
   }

@@ -3,7 +3,7 @@
     <div class="photo-sect">
         <div class="photo">
             <p>Your Photo</p>
-            <img src="../../../../assets/icon-1633249_1280.png" alt="" class="icon-pic">
+            <img src="{{img_src}}" alt="" class="icon-pic">
         </div>
         <div class="actions">
             <i class="fa-solid fa-pen-to-square fa-lg"></i>
@@ -12,25 +12,37 @@
     </div>
     <hr>
     <div class="bio-bit">
-        <form class="bio-form">
+        <form class="bio-form" [formGroup]="bioSettingsForm" (ngSubmit)="bioSettings()">
             <div class="bio-title">
                 <h2>Bio Settings</h2>
             </div>
             <div class="job-title">
-                <label for="">Job Tile</label>
-                <input type="text" placeholder="Data analyst,etc">
+                <label for="">Job Title</label>
+                <input type="text" placeholder="Data analyst,etc" formControlName="j_title">
+                <div *ngIf="bioSettingsForm.get('j_title')?.errors?.['required'] && bioSettingsForm.get('j_title')?.touched" class="error-message" style="color: red;">
+                        Job Title required.
+                </div>
             </div>
             <div class="job-desc">
                 <label for="">Description of what you do</label><br>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea name="" id="" cols="30" rows="10" formControlName="j_desc"></textarea>
+                <div *ngIf="bioSettingsForm.get('j_desc')?.errors?.['required'] && bioSettingsForm.get('j_desc')?.touched" class="error-message" style="color: red;">
+                        Job Description required.
+                </div>
             </div>
             <div class="location">
                 <label for="">Location</label>
-                <input type="text">
+                <input type="text" formControlName="j_loc">
+                <div *ngIf="bioSettingsForm.get('j_loc')?.errors?.['required'] && bioSettingsForm.get('j_loc')?.touched" class="error-message" style="color: red;">
+                        Job Location required.
+                </div>
             </div>
             <div class="ratings">
                 <label for="">Ratings</label>
-                <input type="number">
+                <input type="number" formControlName="j_rates">
+                <div *ngIf="bioSettingsForm.get('j_rates')?.errors?.['required'] && bioSettingsForm.get('j_rates')?.touched" class="error-message" style="color: red;">
+                        Job Rates required.
+                </div>
             </div>
             <div class="sub-btn">
                 <button class="submit-btn">Submit</button>
@@ -39,7 +51,7 @@
     </div>
     <hr>
     <div class="pwd-bit">
-        <form class="pwd-form" [formGroup]="settingsForm" (ngSubmit)="settings()">
+        <form class="pwd-form" [formGroup]="settingsForm" (ngSubmit)="pwdSettings()">
             <div class="old-pwd2">
                 <h2>Password Settings</h2>
             </div>

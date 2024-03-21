@@ -2,10 +2,10 @@ POST http://localhost:4100/spec/7f63e5f2-b9ce-4548-999e-273197e6ea69
 Content-Type: application/json
 
 {
-    "job_title": "Digital Marketer",
-    "spec_loc": "Eldoret, Kenya",
+    "job_title": "Virtual Assistant",
+    "spec_loc": "Nairobi, Kenya",
     "spec_desc": "Trust your business with me",
-    "ratings":2000,
+    "ratings":3000,
     "prof_image":"https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png"
 }
 
@@ -14,16 +14,16 @@ Content-Type: application/json
 GET http://localhost:4100/spec
 ### GETTING USER BY ID
 
-GET http://localhost:4100/spec/7f63e5f2-b9ce-4548-999e-273197e6ea69
+GET http://localhost:4100/spec/ee9fac2d-08e1-4f13-b87d-784f10e443b7
 
 ###
-PUT http://localhost:4100/spec/update/4a5ef199-868a-4c27-b797-c615aef2044f
+PUT http://localhost:4100/spec/update/ee9fac2d-08e1-4f13-b87d-784f10e443b7
 Content-Type: application/json
 
 {
-    "job_title": "Data Analyst",
+    "job_title": "Virtual Assistant",
     "spec_loc": "Nairobi, Kenya",
-    "spec_desc": "Specilize in data cleaning",
-    "ratings":1000,
+    "spec_desc": "Trust your business with me",
+    "ratings":3000,
     "prof_image":"https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png"
 }

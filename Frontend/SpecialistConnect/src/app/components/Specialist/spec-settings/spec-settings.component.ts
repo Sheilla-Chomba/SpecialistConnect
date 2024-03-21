@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserServiceService } from '../../../services/User-Service/user-service.service';
+import { AuthServiceService } from '../../../services/Auth-Services/auth-service.service';
+import { SpecServicesService } from '../../../services/Spec-Services/spec-services.service';
 
 @Component({
   selector: 'app-spec-settings',
@@ -13,13 +15,20 @@ import { UserServiceService } from '../../../services/User-Service/user-service.
 })
 export class SpecSettingsComponent {
   settingsForm!: FormGroup;
+  bioSettingsForm!: FormGroup;
   successMessage: string = '';
   showSuccessMessage: boolean = false;
+
+  user_id!: string;
+  token!: string;
+  img_src:string ="../../../../assets/icon-1633249_1280.png"
 
   constructor(
     private fb: FormBuilder,
     private route: Router,
-    public api: UserServiceService
+    public api: UserServiceService,
+    public authApi: AuthServiceService,
+    public specApi:SpecServicesService
   ) {
     this.settingsForm = this.fb.group(
       {
@@ -29,6 +38,13 @@ export class SpecSettingsComponent {
       },
       { validator: this.passwordMatchValidator }
     );
+    this.bioSettingsForm = this.fb.group({
+      j_title: ['', [Validators.required]],
+      j_desc: ['', [Validators.required]],
+      j_loc: ['', [Validators.required]],
+      j_rates: ['', [Validators.required]],
+    });
+    // this.getUserId()
   }
   passwordMatchValidator(formGroup: FormGroup) {
     const passwordControl = formGroup.get('pwd');
@@ -46,7 +62,7 @@ export class SpecSettingsComponent {
     }
   }
 
-  settings() {
+  pwdSettings() {
     let newPassword = {
       email: this.settingsForm.value.email,
       password: this.settingsForm.value.pwd,
@@ -58,6 +74,41 @@ export class SpecSettingsComponent {
         this.settingsForm.reset();
         this.route.navigate(['/login']);
       }, 3000);
+    });
+  }
+
+  bioSettings(){
+    let bio = {
+      job_title: this.bioSettingsForm.value.j_title,
+      spec_loc: this.bioSettingsForm.value.j_loc,
+      spec_desc: this.bioSettingsForm.value.j_desc,
+      ratings: this.bioSettingsForm.value.j_rates,
+      prof_image: this.img_src,
+    };
+    // console.log(bio);
+    
+    this.specApi.registerSpec(bio).subscribe((response) => {
+      console.log(response);
+    })
+    this.successMessage = 'Spec Created successful';
+    this.showSuccessMessage = true;
+    this.bioSettingsForm.reset();
+
+    setTimeout(() => {
+      this.showSuccessMessage = false;
+      this.route.navigate(['spec/dashboard']);
+    }, 2000);
+  }
+  
+  getToken() {
+    this.token = localStorage.getItem('SpecilistConnect_token') as string;
+    return this.token;
+  }
+  getUserId() {
+    this.authApi.readToken(this.getToken()).subscribe((response) => {
+      console.log(response);
+      this.user_id = response.info.user_id;
+      return this.user_id;
     });
   }
 }
