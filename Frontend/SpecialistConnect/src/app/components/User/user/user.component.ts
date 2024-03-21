@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { AuthServiceService } from '../../../services/Auth-Services/auth-service.service';
 
 @Component({
   selector: 'app-user',
@@ -10,7 +11,12 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  constructor(private route:Router){}
+  email!: string;
+  token!: string;
+
+  constructor(private route: Router, private api: AuthServiceService) {
+    this.getEmail();
+  }
 
   showModalMenu() {
     let modalBg = document.querySelector('.modal-bg');
@@ -26,5 +32,15 @@ export class UserComponent {
   logout() {
     localStorage.removeItem('SpecilistConnect_token');
     this.route.navigate(['/login']);
+  }
+  getToken() {
+    this.token = localStorage.getItem('SpecilistConnect_token') as string;
+    return this.token;
+  }
+  getEmail() {
+    this.api.readToken(this.getToken()).subscribe((response) => {
+      console.log(response);
+      this.email = response.info.email;
+    });
   }
 }

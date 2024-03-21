@@ -15,14 +15,12 @@ export class AdminComponent {
   token!: string;
 
   constructor(private route: Router, private api: AuthServiceService) {
-    // this.email = '';
-    // this.token = '';
-    this.getToken()
+    this.getEmail()
   }
 
   getToken(){
     this.token = localStorage.getItem('SpecilistConnect_token') as string;
-    this.getEmail();
+    return this.token
   }
 
   showModalMenuAdmin() {
@@ -41,7 +39,7 @@ export class AdminComponent {
     this.route.navigate(['/login']);
   }
   getEmail() {
-   this.api.readToken(this.token).subscribe((response) => {
+   this.api.readToken(this.getToken()).subscribe((response) => {
       console.log(response);
       this.email = response.info.email;
     });
