@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { specRegister } from '../../interfaces/spec';
+import { specRegister, specsDetails } from '../../interfaces/spec';
 import { AuthServiceService } from '../Auth-Services/auth-service.service';
 import { specOrders } from '../../interfaces/orders';
 
@@ -59,6 +59,9 @@ export class SpecServicesService {
         'Content-type': 'application/json',
       })
     })
+  }
+  getSpecs(){
+    return this.http.get<{specMes:specsDetails[], error: string}>(`http://localhost:4100/spec`)
   }
 }
 

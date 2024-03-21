@@ -17,7 +17,32 @@
         
     </div>
     <div class="content">
-        <div class="spec-info" routerLink="/user/view-spec">
+        <div class="spec-info" *ngFor="let spec of specs ; let i = index" routerLink="/user/view-spec" >
+            <div class="spec-head">
+                <div class="photo">
+                    <img src="{{spec.prof_image}}" alt="" class="spec-pic">
+                </div>
+                <div class="no-id" style="display: none;">
+                    {{spec.spec_id}}
+                </div>
+                <div class="spec-name">
+                    <h3>{{spec.f_name}} {{spec.l_name}}</h3>
+                    <p>{{spec.spec_loc}}</p>
+                </div>
+            </div>
+            <div class="spec-desc">
+                <h3>{{spec.job_title}}</h3>
+                <p>{{spec.spec_desc}}</p>
+            </div>
+            <div class="spec-rates">
+                <h3>Ratings</h3>
+                <p>Ksh. {{spec.ratings}}</p>
+            </div>
+            <div class="spec-job">
+                <button class="job-btn" routerLink="/user/give-order">Invite for Job</button>
+            </div>
+        </div>
+        <!-- <div class="spec-info" routerLink="/user/view-spec">
             <div class="spec-head">
                 <div class="photo">
                     <img src="../../../../assets/woman-1439909_1280.jpg" alt="" class="spec-pic">
@@ -82,29 +107,7 @@
             <div class="spec-job">
                 <button class="job-btn" routerLink="/user/give-order">Invite for Job</button>
             </div>
-        </div>
-        <div class="spec-info" routerLink="/user/view-spec">
-            <div class="spec-head">
-                <div class="photo">
-                    <img src="../../../../assets/woman-1439909_1280.jpg" alt="" class="spec-pic">
-                </div>
-                <div class="spec-name">
-                    <h3>Jane Doe</h3>
-                    <p>Nairobi, Kenya</p>
-                </div>
-            </div>
-            <div class="spec-desc">
-                <h3>Data Analyst</h3>
-                <p>Specializing in Data Cleaning</p>
-            </div>
-            <div class="spec-rates">
-                <h3>Ratings</h3>
-                <p>Ksh. 1000/hr</p>
-            </div>
-            <div class="spec-job">
-                <button class="job-btn" routerLink="/user/give-order">Invite for Job</button>
-            </div>
-        </div>
+        </div> -->
 
     </div>
 </div>
