@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { userRegister, users } from '../../interfaces/user';
+import { pwdReset } from '../../interfaces/resetPwd';
 
 @Injectable({
   providedIn: 'root'
@@ -22,4 +23,13 @@ export class UserServiceService {
       })
     })
   }
+
+  //Password Reset
+  passwordReset(newPassword:pwdReset){
+    interface passwordReset {
+      message: string,
+      error: string
+    }
+    return this.http.put<passwordReset>('http://localhost:4100/auth/reset_pwd' ,newPassword)
+  };
 }
