@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { specRegister } from '../../interfaces/spec';
 import { AuthServiceService } from '../Auth-Services/auth-service.service';
+import { specOrders } from '../../interfaces/orders';
 
 @Injectable({
   providedIn: 'root',
@@ -48,7 +49,17 @@ export class SpecServicesService {
     let spec_id = this.user_id
 
     return this.http.put<{message:string, error:string}>(`http://localhost:4100/spec/update/${spec_id}`, specUpdate)
-  };
+  }
+
+  getSpecOrders(){
+    let spec_id = this.user_id;
+
+    return this.http.get<{spec_orders:specOrders[], error: string}>(`http://localhost:4100/order/spec/${spec_id}`, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+      })
+    })
+  }
 }
 
 

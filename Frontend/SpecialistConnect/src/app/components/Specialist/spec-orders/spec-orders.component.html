@@ -24,16 +24,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Jane</td>
-                    <td>Doe</td>
-                    <td>Completed</td>
+                <tr *ngFor="let order of orders ; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{order.user_fname}} {{order.user_lname}}</td>
+                    <td>{{order.order_desc}}</td>
+                    <td>{{order.status}}</td>
                     <td>
                         
                     </td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>2</td>
                     <td>Jane</td>
                     <td>Doe</td>
@@ -50,7 +50,7 @@
                     <td>
                         <i class="fa-solid fa-pen-to-square"></i>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
 
         </table>
