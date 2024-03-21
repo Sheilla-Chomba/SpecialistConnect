@@ -1,20 +1,34 @@
 <div class="main">
     <div class="form-div">
-        <form class="form">
+        <form class="form" [formGroup]="settingsForm" (ngSubmit)="settings()">
             <div class="form-head">
                 <h2>Settings</h2>
             </div>
             <div class="form-body">
-                <label for="">Old Password</label><br>
-                <input type="password" placeholder="************" class="input-pwd">
+                <label for="">Email</label><br>
+                <input type="email" placeholder="janedoe@gmail.com" class="input-pwd" formControlName="email">
+                <div *ngIf="settingsForm.get('email')?.errors?.['required'] && settingsForm.get('email')?.touched" class="error-message" style="color: red;">
+                        Email required.
+                </div>
+                <div *ngIf="settingsForm.get('email')?.errors?.['email'] &&settingsForm.get('email')?.touched" class="error-message" style="color: red;">
+                        Invalid email format.
+                </div>
             </div>
             <div class="form-body">
                 <label for="">New Password</label><br>
-                <input type="password" placeholder="************" class="input-pwd">
+                <input type="password" placeholder="************" class="input-pwd" formControlName="pwd">
+                <div *ngIf="settingsForm.get('pwd')?.invalid && settingsForm.get('pwd')?.touched" class="error-message" style="color: red;">
+                    <div *ngIf="settingsForm.get('pwd')?.errors?.['required']">Password is required.</div>
+                    <div *ngIf="settingsForm.get('pwd')?.errors?.['minlength'] && !settingsForm.get('pwd')?.errors?.['required']">Password must be at least 6 characters long.</div>
+                </div>
             </div>
             <div class="form-body">
                 <label for="">Confirm New Password</label><br>
-                <input type="password" placeholder="************" class="input-pwd">
+                <input type="password" placeholder="************" class="input-pwd" formControlName="confirmPwd">
+                <div *ngIf="settingsForm.get('confirmPwd')?.errors && settingsForm.get('confirmPwd')?.touched" class="error-message" style="color: red;">
+                    <div *ngIf="settingsForm.get('confirmPwd')?.errors?.['required']">Confirm Password is required.</div>
+                    <div *ngIf="settingsForm.get('confirmPwd')?.errors?.['mismatch'] && !settingsForm.get('confirmPwd')?.errors?.['required']">Passwords do not match.</div>
+                </div>
             </div>
             <div class="form-body">
                 <button class="pwd-btn">Change Password</button>
