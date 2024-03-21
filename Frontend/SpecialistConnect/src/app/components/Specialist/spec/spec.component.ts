@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { AuthServiceService } from '../../../services/Auth-Services/auth-service.service';
 
 @Component({
   selector: 'app-spec',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule,RouterLink],
   templateUrl: './spec.component.html',
   styleUrl: './spec.component.css',
 })
