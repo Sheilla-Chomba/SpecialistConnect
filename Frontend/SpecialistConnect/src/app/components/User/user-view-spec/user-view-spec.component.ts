@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { SpecServicesService } from '../../../services/Spec-Services/spec-services.service';
 import { specsDetails } from '../../../interfaces/spec';
 import { CommonModule } from '@angular/common';
@@ -15,7 +15,7 @@ export class UserViewSpecComponent {
   spec_id!:string
   specDetails:specsDetails[]=[];
 
-  constructor(private api:SpecServicesService, private active_route:ActivatedRoute){
+  constructor(private api:SpecServicesService, private active_route:ActivatedRoute,private route:Router){
     this.active_route.params.subscribe((params) => {
       this.spec_id = params['spec_id'];
       console.log('spec_id:', this.spec_id);
@@ -25,5 +25,8 @@ export class UserViewSpecComponent {
         this.specDetails = res.spec;
         console.log('One Specialist Details:', this.specDetails);
       });
+  }
+  giveSpecOrder(spec_id:string){
+     this.route.navigate(['/user/give-order/', spec_id]);
   }
 }

@@ -13,7 +13,7 @@ GET http://localhost:4100/order
 
 ### GETTING BY ID
 
-GET http://localhost:4100/order/f9b478e2-e03b-42b9-bc3c-0eef869172ed
+GET http://localhost:4100/order/c03fbe04-5d28-4975-b740-f18f91d5bb9f
 
 ### GETTING BY ID FOR EACH SPECIALIST
 

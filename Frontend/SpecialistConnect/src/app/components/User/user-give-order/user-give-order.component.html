@@ -1,9 +1,12 @@
 <div class="main">
-    <form class="form">
+    <form class="form" [formGroup]="orderForm" (ngSubmit)="order()">
         <h2>Please give your Job description</h2>
-        <textarea cols="30" rows="15" placeholder="I want the job to be done..." class="rev-text">
+        <textarea cols="30" rows="15" placeholder="I want the job to be done..." class="rev-text" formControlName="order_desc">
             
         </textarea><br>
+        <div *ngIf="orderForm.get('order_desc')?.errors?.['required'] && orderForm.get('order_desc')?.touched" class="error-message" style="color: red;">
+            Order description required.
+        </div>
         <button class="review-btn">Submit</button>
     </form>
 </div>
