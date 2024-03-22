@@ -19,6 +19,10 @@ GET http://localhost:4100/order/c03fbe04-5d28-4975-b740-f18f91d5bb9f
 
 GET http://localhost:4100/order/spec/7f63e5f2-b9ce-4548-999e-273197e6ea69
 
+### GETTING BY ID FOR EACH USER
+
+GET http://localhost:4100/order/user/db15362c-5770-4c2b-8897-cfb733fcec2f
+
 ### UPDATING ORDERS
 PUT http://localhost:4100/order/update/f9b478e2-e03b-42b9-bc3c-0eef869172ed
 Content-Type: application/json

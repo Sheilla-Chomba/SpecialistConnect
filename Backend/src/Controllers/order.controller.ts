@@ -90,6 +90,22 @@ export const getSpecOrders = async(req: Request, res:Response)=>{
     }
 }
 
+export const getUserOrders = async(req: Request, res:Response)=>{
+    try {
+        const id = req.params.id
+
+        const pool = await mssql.connect(sqlConfig)
+
+        let user_orders = (await pool.request().input("user_id", id).execute('getUserOrders')).recordset
+
+        return res.json({
+            user_orders
+        })
+    } catch (error) {
+        return res.json({error})
+    }
+}
+
 export const updateOrder = async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
