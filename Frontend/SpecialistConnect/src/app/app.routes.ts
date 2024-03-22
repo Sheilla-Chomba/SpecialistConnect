@@ -38,7 +38,7 @@ export const routes: Routes = [
     {path: 'orders', component: UserOrdersComponent},
     {path: 'reviews', component: UserReviewsComponent},
     {path: 'give-order', component: UserGiveOrderComponent},
-    {path: 'view-spec', component: UserViewSpecComponent},
+    {path: 'view-spec/:spec_id', component: UserViewSpecComponent},
   ]
 },
   { path: 'spec', component: SpecComponent,

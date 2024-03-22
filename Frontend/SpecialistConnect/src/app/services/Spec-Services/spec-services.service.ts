@@ -67,6 +67,14 @@ export class SpecServicesService {
       })
     })
   }
+
+  getOneSpecDetailsUserDash(spec_id:string){
+    return this.http.get<{spec:specsDetails[]}>(`http://localhost:4100/spec/${spec_id}`, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+      })
+    })
+  }
 }
 
 

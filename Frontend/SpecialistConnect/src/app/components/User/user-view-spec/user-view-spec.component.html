@@ -1,20 +1,20 @@
-<div class="main">
+<div class="main" *ngFor="let specDetail of specDetails">
     <div class="head">
         <div class="spec-img">
-            <img src="../../../../assets/woman-1439909_1280.jpg" alt="" class="spec-image">
+            <img src="{{specDetail.prof_image}}" alt="" class="spec-image">
         </div>
         <div class="spec-loc">
-            <h2>Jane Doe</h2>
-            <p>Nairobi, Kenya</p>
+            <h2>{{specDetail.f_name}} {{specDetail.l_name}}</h2>
+            <p>{{specDetail.spec_loc}}</p>
         </div>
     </div>
     <div class="desc">
         <div class="spec-desc">
-            <h3>Data Analyst</h3>
-            <p>Specializes in Data Cleaning</p>
+            <h3>{{specDetail.job_title}}</h3>
+            <p>{{specDetail.spec_desc}}</p>
         </div>
         <div class="spec-ratings">
-            <p><b>Ratings:</b> Kshs. 1000 per hour</p>
+            <p><b>Ratings:</b> Kshs. {{specDetail.ratings}}</p>
         </div>
     </div>
     <div class="reviews">

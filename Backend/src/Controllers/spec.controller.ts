@@ -92,7 +92,7 @@ export const getOneSpec = async (req: Request, res: Response) => {
       .recordset;
 
     return res.json({
-      spec,
+      spec:spec,
     });
   } catch (error) {
     return res.json({ error });

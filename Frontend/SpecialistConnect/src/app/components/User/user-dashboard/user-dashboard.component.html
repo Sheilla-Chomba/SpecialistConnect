@@ -17,7 +17,7 @@
         
     </div>
     <div class="content">
-        <div class="spec-info" *ngFor="let spec of specs ; let i = index" routerLink="/user/view-spec" >
+        <div class="spec-info" *ngFor="let spec of specs ; let i = index" >
             <div class="spec-head">
                 <div class="photo">
                     <img src="{{spec.prof_image}}" alt="" class="spec-pic">
@@ -39,7 +39,7 @@
                 <p>Ksh. {{spec.ratings}}</p>
             </div>
             <div class="spec-job">
-                <button class="job-btn" routerLink="/user/give-order">Invite for Job</button>
+                <button class="job-btn" (click)="viewSpec(spec.spec_id)">View Specialist</button>
             </div>
         </div>
         <!-- <div class="spec-info" routerLink="/user/view-spec">
