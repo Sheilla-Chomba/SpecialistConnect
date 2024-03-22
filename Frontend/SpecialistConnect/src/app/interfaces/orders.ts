@@ -9,3 +9,9 @@ export interface createOrder{
   user_id:string;
   order_desc:string;
 }
+export interface userOrders {
+  spec_fname: string;
+  spec_lname: string;
+  order_desc: string;
+  status: string;
+}
