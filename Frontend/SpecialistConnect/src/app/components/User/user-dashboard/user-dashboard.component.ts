@@ -20,9 +20,9 @@ export class UserDashboardComponent {
 
   fetchSpecs() {
     this.api.getSpecs().subscribe((res) => {
-      console.log(`Resyyyyy${res}`);
+      console.log(`Resyyyyy${res.specs}`);
 
-      this.specs = res.specMes;
+      this.specs = res.specs;
       // console.log(`Want to see ${this.specs}`);
       
     });

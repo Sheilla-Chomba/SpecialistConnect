@@ -61,7 +61,11 @@ export class SpecServicesService {
     })
   }
   getSpecs(){
-    return this.http.get<{specMes:specsDetails[], error: string}>(`http://localhost:4100/spec`)
+    return this.http.get<{specs:specsDetails[], error: string}>(`http://localhost:4100/spec`,{
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+      })
+    })
   }
 }
 
