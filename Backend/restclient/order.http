@@ -17,7 +17,7 @@ GET http://localhost:4100/order/c03fbe04-5d28-4975-b740-f18f91d5bb9f
 
 ### GETTING BY ID FOR EACH SPECIALIST
 
-GET http://localhost:4100/order/spec/7f63e5f2-b9ce-4548-999e-273197e6ea69
+GET http://localhost:4100/order/spec/4a5ef199-868a-4c27-b797-c615aef2044f
 
 ### GETTING BY ID FOR EACH USER
 

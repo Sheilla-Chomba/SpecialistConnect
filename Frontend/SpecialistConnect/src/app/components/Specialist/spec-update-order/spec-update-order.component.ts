@@ -33,6 +33,7 @@ export class SpecUpdateOrderComponent {
   ) {
     (this.orderForm = this.fb.group({
       status: ['', [Validators.required]],
+      order_desc: ['', [Validators.required]],
     })),
       this.active_route.params.subscribe((params) => {
         this.order_id = params['order_id'];
@@ -60,14 +61,15 @@ export class SpecUpdateOrderComponent {
       this.order = res.orders[0];
 
       this.orderForm.patchValue({
-        status: this.order.status
+        status: this.order.status,
+        order_desc: this.order.order_desc
       });
-      this.order_desc = this.order.order_desc;
+      // this.order_desc = this.order.order_desc;
     });
   }
   updateOrder() {
     let updateOrder = {
-      order_desc: this.order_desc,
+      order_desc: this.orderForm.value.order_desc,
       status: this.orderForm.value.status,
     };
     this.order_api
