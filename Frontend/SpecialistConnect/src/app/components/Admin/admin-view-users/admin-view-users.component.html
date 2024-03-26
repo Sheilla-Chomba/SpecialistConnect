@@ -5,9 +5,9 @@
         </div>
         <div class="filter">
             Filter
-            <select class="select-box">
+            <select class="select-box" [(ngModel)]="filter">
                 <option value="">Type of User</option>
-                <option value="specialist">Specialist</option>
+                <option value="spec">Specialist</option>
                 <option value="user">User</option>
             </select>
         </div>
@@ -25,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let user of users ; let i = index">
+                <tr *ngFor="let user of users | filterRole:filter ; let i = index">
                     <td>{{i+1}}</td>
                     <td>{{user.f_name}}</td>
                     <td>{{user.l_name}}</td>
