@@ -17,3 +17,7 @@ export interface userOrders {
   order_desc: string;
   status: string;
 }
+export interface updateOrders {
+  order_desc: string;
+  status: string;
+}

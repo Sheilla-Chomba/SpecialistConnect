@@ -18,6 +18,7 @@ import { SpecSettingsComponent } from './components/Specialist/spec-settings/spe
 import { UserDashboardComponent } from './components/User/user-dashboard/user-dashboard.component';
 import { UserGiveOrderComponent } from './components/User/user-give-order/user-give-order.component';
 import { UserViewSpecComponent } from './components/User/user-view-spec/user-view-spec.component';
+import { SpecUpdateOrderComponent } from './components/Specialist/spec-update-order/spec-update-order.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -45,6 +46,7 @@ export const routes: Routes = [
   children:[
     {path: 'dashboard', component: SpecOrdersComponent},
     {path: 'settings', component: SpecSettingsComponent},
+    {path:"update-order/:order_id", component:SpecUpdateOrderComponent}
   ]
 },
   { path: '**', component: NotFoundComponent },
