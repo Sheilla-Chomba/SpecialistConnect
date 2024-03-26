@@ -3,21 +3,24 @@
         <div class="title">
             <h2>Freelance</h2>
         </div>
+        <div>
+            <input type="search" [(ngModel)]="filter">
+        </div>
         <div class="filter">
             Filter
-            <select class="select-box">
+            <select class="select-box"  [(ngModel)]="filter2" type="search">
                 <option value="">Skills</option>
-                <option value="ui-designer">UI Designer</option>
-                <option value="data-analyst">Data Analyst</option>
-                <option value="virtual-assistant">Virtual Assistant</option>
-                <option value="web-designer">Web Designer</option>
-                <option value="dig-marketing">Digital Marketer</option>
+                <option value="UI Designer">UI Designer</option>
+                <option value="Data Analyst">Data Analyst</option>
+                <option value="Virtual Assistant">Virtual Assistant</option>
+                <option value="Web Developer">Web Developer</option>
+                <option value="Digital Marketer">Digital Marketer</option>
             </select>
         </div>
         
     </div>
     <div class="content">
-        <div class="spec-info" *ngFor="let spec of specs ; let i = index" >
+        <div class="spec-info" *ngFor="let spec of specs | search:filter | filterSpecSkills:filter2; let i = index" >
             <div class="spec-head">
                 <div class="photo">
                     <img src="{{spec.prof_image}}" alt="" class="spec-pic">

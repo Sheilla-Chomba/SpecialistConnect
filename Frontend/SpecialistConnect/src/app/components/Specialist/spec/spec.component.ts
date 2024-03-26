@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { AuthServiceService } from '../../../services/Auth-Services/auth-service.service';
+import { SearchPipe } from '../../../pipes/Search-specs/search.pipe';
 
 @Component({
   selector: 'app-spec',
   standalone: true,
-  imports: [RouterOutlet, CommonModule,RouterLink],
+  imports: [RouterOutlet, CommonModule, RouterLink, SearchPipe],
   templateUrl: './spec.component.html',
   styleUrl: './spec.component.css',
 })
@@ -29,11 +30,10 @@ export class SpecComponent {
   }
 
   logout() {
-    localStorage.removeItem('SpecilistConnect_token');
+    localStorage.clear();
     this.route.navigate(['/login']);
-    
   }
-  
+
   getToken() {
     this.token = localStorage.getItem('SpecilistConnect_token') as string;
     return this.token;
