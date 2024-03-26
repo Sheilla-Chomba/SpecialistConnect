@@ -1,9 +1,12 @@
 <div class="main">
-    <form class="form">
+    <form class="form" [formGroup]="reviewForm" (ngSubmit)="review()">
         <h2>Please add your review of the project</h2>
-        <textarea cols="30" rows="15" placeholder="Your Opinion of the work done" class="rev-text">
+        <textarea cols="30" rows="15" placeholder="Your Opinion of the work done" class="rev-text" formControlName="review_desc">
             
         </textarea><br>
+        <div *ngIf="reviewForm.get('review_desc')?.errors?.['required'] && reviewForm.get('review_desc')?.touched" class="error-message" style="color: red;">
+            Review description required.
+        </div>
         <button class="review-btn">Send Review</button>
     </form>
 </div>
