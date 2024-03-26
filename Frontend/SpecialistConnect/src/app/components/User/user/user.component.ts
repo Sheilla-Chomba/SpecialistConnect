@@ -33,7 +33,7 @@ export class UserComponent {
   }
 
   logout() {
-    localStorage.removeItem('SpecilistConnect_token');
+    localStorage.clear();
     this.route.navigate(['/login']);
   }
   getToken() {

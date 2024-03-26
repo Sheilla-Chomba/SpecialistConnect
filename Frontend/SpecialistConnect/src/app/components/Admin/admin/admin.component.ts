@@ -35,7 +35,7 @@ export class AdminComponent {
   }
 
   logout() {
-    localStorage.removeItem('SpecilistConnect_token');
+    localStorage.clear();
     this.route.navigate(['/login']);
   }
   getEmail() {
