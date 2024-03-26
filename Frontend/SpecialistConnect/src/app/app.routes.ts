@@ -36,7 +36,7 @@ export const routes: Routes = [
     {path: 'dashboard', component: UserDashboardComponent},
     {path: 'settings', component: UserSettingsComponent},
     {path: 'orders', component: UserOrdersComponent},
-    {path: 'reviews', component: UserReviewsComponent},
+    {path: 'reviews/:order_id', component: UserReviewsComponent},
     {path: 'give-order/:spec_id', component: UserGiveOrderComponent},
     {path: 'view-spec/:spec_id', component: UserViewSpecComponent},
   ]

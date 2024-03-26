@@ -1,4 +1,5 @@
 export interface specOrders {
+  order_id: string;
   user_fname: string;
   user_lname: string;
   order_desc: string;
@@ -10,6 +11,7 @@ export interface createOrder{
   order_desc:string;
 }
 export interface userOrders {
+  order_id:string;
   spec_fname: string;
   spec_lname: string;
   order_desc: string;
