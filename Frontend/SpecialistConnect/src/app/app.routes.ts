@@ -19,6 +19,7 @@ import { UserDashboardComponent } from './components/User/user-dashboard/user-da
 import { UserGiveOrderComponent } from './components/User/user-give-order/user-give-order.component';
 import { UserViewSpecComponent } from './components/User/user-view-spec/user-view-spec.component';
 import { SpecUpdateOrderComponent } from './components/Specialist/spec-update-order/spec-update-order.component';
+import { UserChangeStatusComponent } from './components/User/user-change-status/user-change-status.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -40,6 +41,7 @@ export const routes: Routes = [
     {path: 'reviews/:order_id', component: UserReviewsComponent},
     {path: 'give-order/:spec_id', component: UserGiveOrderComponent},
     {path: 'view-spec/:spec_id', component: UserViewSpecComponent},
+    {path:"update-order/:order_id", component:UserChangeStatusComponent}
   ]
 },
   { path: 'spec', component: SpecComponent,

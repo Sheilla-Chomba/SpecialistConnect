@@ -33,7 +33,7 @@
                     <td>{{order.status}}</td>
                     <td>
                         <ng-container *ngIf="order.status === 'Accepted'; else elseBlock">
-                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-pen-to-square" (click)="changeStatus(order.order_id)"></i>
                         </ng-container>
                         <ng-container *ngIf="order.status === 'Completed'; else elseBlock">
                             <i class="fa-solid fa-pen-to-square" (click)="giveReview(order.order_id)"></i>

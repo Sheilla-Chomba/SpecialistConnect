@@ -1,0 +1,15 @@
+<div class="main">
+    <form class="form" [formGroup]="orderForm" (ngSubmit)="updateOrder()">
+        <h2>Please add your review of the project</h2>
+        <label for="">Is the order complete?</label><br>
+        <select class="select-box" class="rev-text" formControlName="status">
+                <option value="">Status of Orders</option>
+                <option value="Completed">Accept</option>
+            </select><br>
+        <div *ngIf="orderForm.get('status')?.errors?.['required'] && orderForm.get('status')?.touched" class="error-message" style="color: red;">
+            Status description required.
+        </div>
+        <button class="review-btn">Update Order</button>
+    </form>
+</div>
+<p>user-change-status works!</p>

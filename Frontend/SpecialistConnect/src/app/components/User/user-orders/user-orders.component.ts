@@ -32,5 +32,7 @@ export class UserOrdersComponent {
   giveReview(order_id: string) {
     this.route.navigate(['/user/reviews/', order_id]);
   }
-
+  changeStatus(order_id: string) {
+    this.route.navigate(['/user/update-order/', order_id]);
+  }
 }
