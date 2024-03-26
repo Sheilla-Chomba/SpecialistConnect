@@ -17,3 +17,7 @@ GET http://localhost:4100/review/7bd44291-6763-4366-8c34-482398ced995
 ### GETTING ALL SPEC REVIEWS BY ID
 
 GET http://localhost:4100/review/spec/7f63e5f2-b9ce-4548-999e-273197e6ea69
+
+### GETTING ALL USER REVIEWS BY ID
+
+GET http://localhost:4100/review/user/db15362c-5770-4c2b-8897-cfb733fcec2f

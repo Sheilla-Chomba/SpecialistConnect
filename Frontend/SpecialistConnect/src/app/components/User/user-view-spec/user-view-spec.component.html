@@ -21,8 +21,14 @@
         <div class="rev-title">
             <h2>What people think</h2>
         </div>
-        <div class="rev-content">
-            <div class="rev1">
+        <div class="rev-content" >
+            <div class="rev1" *ngFor="let reviewDetail of reviewDetails">
+                <p>
+                    {{reviewDetail.review_desc}} <br>
+                    <b>~{{reviewDetail.user_fname}} {{reviewDetail.user_lname}}</b>
+                </p>
+            </div>
+             <!-- <div class="rev1">
                 <p>
                     The best Data analyst I have with so far. Very reliable 
                     I highly recommend <br>
@@ -42,14 +48,7 @@
                     I highly recommend <br>
                     <b>~Sheilla</b>
                 </p>
-            </div>
-             <div class="rev1">
-                <p>
-                    The best Data analyst I have with so far. Very reliable 
-                    I highly recommend <br>
-                    <b>~Sheilla</b>
-                </p>
-            </div>
+            </div> -->
         </div>
         <div class="invite">
             <button class="invite-btn" (click)="giveSpecOrder(specDetail.spec_id)">Invite for Job</button>

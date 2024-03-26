@@ -86,3 +86,18 @@ export const getSpecReviews = async(req: Request, res:Response)=>{
         return res.json({error})
     }
 }
+export const getUserReviews = async(req: Request, res:Response)=>{
+    try {
+        const id = req.params.id
+
+        const pool = await mssql.connect(sqlConfig)
+
+        let reviews = (await pool.request().input("user_id", id).execute('getUserReviews')).recordset
+
+        return res.json({
+            reviews
+        })
+    } catch (error) {
+        return res.json({error})
+    }
+}

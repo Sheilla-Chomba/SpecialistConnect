@@ -5,3 +5,4 @@ CREATE TABLE Orders(
     order_desc VARCHAR(8000) NOT NULL,
     status VARCHAR(50) DEFAULT 'Pending'
 )
+SELECT * FROM Orders
