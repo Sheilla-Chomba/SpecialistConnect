@@ -6,15 +6,15 @@ import { specsDetails } from '../../interfaces/spec';
   standalone: true,
 })
 export class FilterSpecSkillsPipe implements PipeTransform {
-  transform(specs: specsDetails[], name: string): specsDetails[] {
-    if (!specs || name == '') {
+  transform(specs: specsDetails[], j_name: string): specsDetails[] {
+    if (!specs || j_name == '') {
       return specs;
     }
 
     const filtered: specsDetails[] = [];
 
     for (let spec of specs) {
-      if (spec.job_title.toLowerCase().includes(name.toLowerCase())) {
+      if (spec.job_title.includes(j_name)) {
         filtered.push(spec);
       }
     }

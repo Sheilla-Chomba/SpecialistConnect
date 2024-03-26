@@ -13,6 +13,26 @@
     justify-content: space-between;
     align-items: center;
 }
+.search{
+    height: 50%;
+    min-width: 17%;
+    max-width: max-content;
+    background-color: #DEE8FB;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+.search-input{
+    border: none;
+    height: 100%; 
+    padding-left: 3%;
+    border-radius: 20px;
+    background-color: #DEE8FB;
+}
+.search-input:focus{
+  outline: none;
+}
 .select-box{
     border-radius: 10px;
     background-color: #DEE8FB;

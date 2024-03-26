@@ -1,20 +1,22 @@
 <div class="main">
-    <div class="head">
-        <div class="title">
-            <h2>Freelance</h2>
-        </div>
-        <div>
-            <input type="search" [(ngModel)]="filter">
+    <div class="title">
+        <h2>Freelancers</h2>
+    </div>
+    <div class="head"> 
+        <div class="search">
+            <input type="search" placeholder="Search" class="search-input" [(ngModel)]="filter">
+            <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <div class="filter">
             Filter
-            <select class="select-box"  [(ngModel)]="filter2" type="search">
+            <select class="select-box"  [(ngModel)]="filter2">
                 <option value="">Skills</option>
-                <option value="UI Designer">UI Designer</option>
+                <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+                <!-- <option value="UI Designer">UI Designer</option>
                 <option value="Data Analyst">Data Analyst</option>
                 <option value="Virtual Assistant">Virtual Assistant</option>
                 <option value="Web Developer">Web Developer</option>
-                <option value="Digital Marketer">Digital Marketer</option>
+                <option value="Digital Marketer">Digital Marketer</option> -->
             </select>
         </div>
         

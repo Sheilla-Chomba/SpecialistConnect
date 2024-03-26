@@ -18,6 +18,7 @@ export class UserDashboardComponent {
   specs: specsDetails[] = [];
   filter = '';
   filter2 = '';
+  options: string[] = ["UI Designer", "Data Analyst", "Virtual Assistant", "Web Developer", "Digital Marketer"];
 
   constructor(private api: SpecServicesService, private route: Router) {
     this.fetchSpecs();
