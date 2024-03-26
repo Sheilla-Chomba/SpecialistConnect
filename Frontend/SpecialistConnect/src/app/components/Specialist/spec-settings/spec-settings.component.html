@@ -18,7 +18,15 @@
             </div>
             <div class="job-title">
                 <label for="">Job Title</label>
-                <input type="text" placeholder="Data analyst,etc" formControlName="j_title">
+                <select class="select-box" formControlName="j_title">
+                    <option value="">Select Job Title</option>
+                    <option value="UI Designer">UI Designer</option>
+                    <option value="Data Analyst">Data Analyst</option>
+                    <option value="Virtual Assistant">Virtual Assistant</option>
+                    <option value="Web Developer">Web Developer</option>
+                    <option value="Digital Marketer">Digital Marketer</option>
+                </select>
+                <!-- <input type="text" placeholder="Data analyst,etc" formControlName="j_title"> -->
                 <div *ngIf="bioSettingsForm.get('j_title')?.errors?.['required'] && bioSettingsForm.get('j_title')?.touched" class="error-message" style="color: red;">
                         Job Title required.
                 </div>

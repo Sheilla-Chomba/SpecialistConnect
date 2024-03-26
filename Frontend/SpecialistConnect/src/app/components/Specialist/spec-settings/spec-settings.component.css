@@ -81,6 +81,14 @@
     border-radius: 20px;
     border: none;
 }
+.bio-form select{
+    height: 5vh;
+    width: 58%;
+    padding-left: 2%;
+    background-color: #DEE8FB;
+    border-radius: 20px;
+    border: none;
+}
 .submit-btn{
     height: 5vh;
     width: 60%;
