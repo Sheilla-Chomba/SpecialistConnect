@@ -5,6 +5,7 @@ import { OrderServicesService } from '../../../services/Order-Services/order-ser
 import { ActivatedRoute, Router } from '@angular/router';
 import { updateOrders } from '../../../interfaces/orders';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-change-status',
@@ -67,13 +68,20 @@ export class UserChangeStatusComponent {
   }
   updateOrder() {
     let updateOrder = {
-      order_desc: this.order_desc,
       status: this.orderForm.value.status,
     };
     this.order_api
-      .updateOrder(updateOrder, this.order_id)
+      .updateOrderStatus(updateOrder, this.order_id)
       .subscribe((response) => {
         console.log(response);
+        Swal.fire({
+          title: 'Orders',
+          text: 'Status Updated successfully',
+          icon: 'success',
+          showCancelButton: true,
+          confirmButtonColor: '#21cdc0',
+          cancelButtonColor: '#d33',
+        });
       });
     this.successMessage = 'Order Status Updated successful';
     this.showSuccessMessage = true;
