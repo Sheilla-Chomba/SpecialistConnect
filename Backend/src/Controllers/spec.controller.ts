@@ -1,6 +1,6 @@
 import mssql from "mssql";
 import { Request, Response } from "express";
-import { Spec } from "../Interfaces/spec";
+import { Spec } from "../Interfaces/specs";
 import { sqlConfig } from "../Config/sql.config";
 import { registerSpecSchema } from "../Validators/spec.validators";
 
