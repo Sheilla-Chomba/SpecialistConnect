@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="email-div">
-                    <label for="">Email</label><br>
+                    <label for="">Work Email</label><br>
                     <input type="email" placeholder="janedoe@gmail.com" class="email" formControlName="email">
                     <div *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched" class="error-message" style="color: red;">
                         Email required.
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="submit-btn">
-                    <button class="sign-in-btn">Sign in</button>
+                    <button class="sign-in-btn">Sign up</button>
                 </div>
                 
             </form>
