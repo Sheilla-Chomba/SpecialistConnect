@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { createOrder, updateOrders } from '../../interfaces/orders';
+import { createOrder, updateOrders, updateOrdersStatus } from '../../interfaces/orders';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,10 @@ export class OrderServicesService {
 
   updateOrder(orderUpdate:updateOrders,  order_id:string){
   return this.http.put<{message:string, error:string}>(`http://localhost:4100/order/update/${order_id}`, orderUpdate)
+  }
+
+  updateOrderStatus(orderUpdateStatus:updateOrdersStatus,  order_id:string){
+  return this.http.put<{message:string, error:string}>(`http://localhost:4100/order/update/status/${order_id}`, orderUpdateStatus)
   }
   
   getOrders(){

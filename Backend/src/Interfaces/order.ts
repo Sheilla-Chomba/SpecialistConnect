@@ -10,3 +10,7 @@ export interface Updated_Order {
   order_desc: string;
   status: string;
 }
+export interface Updated_Order_Status {
+  order_id: string;
+  status: string;
+}

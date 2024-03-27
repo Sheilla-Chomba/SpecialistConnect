@@ -10,9 +10,6 @@
         <div *ngIf="orderForm.get('status')?.errors?.['required'] && orderForm.get('status')?.touched" class="error-message" style="color: red;">
             Status description required.
         </div>
-        <div style="display: none;">
-            <input type="text" formControlName="order_desc">
-        </div>
         <button class="review-btn">Update Order</button>
     </form>
 </div>

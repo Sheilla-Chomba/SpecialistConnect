@@ -1,12 +1,13 @@
 import mssql from "mssql";
 import { Request, Response } from "express";
-import { Order, Updated_Order } from "../Interfaces/order";
+import { Order, Updated_Order, Updated_Order_Status } from "../Interfaces/order";
 import { sqlConfig } from "../Config/sql.config";
 import { registerOrderSchema } from "../Validators/order.validators";
 import { v4 } from "uuid";
 
 const orders: Order[] = [];
 const updated_orders: Updated_Order[] = [];
+const updated_orders_status: Updated_Order_Status[] = [];
 
 export const createOrder = async (req: Request, res: Response) => {
   try {
@@ -127,6 +128,32 @@ export const updateOrder = async (req: Request, res: Response) => {
 
     return res.status(200).json({
       message: "Order details successfully updated",
+    });
+  } catch (error) {
+    return res.json({ error });
+  }
+}
+
+export const updateOrderStatus = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+
+    const { status }: Updated_Order_Status = req.body;
+
+    const pool = await mssql.connect(sqlConfig);
+
+    let result = (
+      await pool
+        .request()
+        .input("order_id", id)
+        .input("status", mssql.VarChar, status)
+        .execute("updateOrderStatus")
+    ).rowsAffected;
+
+    // console.log(result);
+
+    return res.status(200).json({
+      message: "Order status details successfully updated",
     });
   } catch (error) {
     return res.json({ error });

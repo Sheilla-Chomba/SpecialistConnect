@@ -21,3 +21,6 @@ export interface updateOrders {
   order_desc: string;
   status: string;
 }
+export interface updateOrdersStatus {
+  status: string;
+}
